@@ -13,12 +13,13 @@ function mainController($scope, $mdDialog) {
 	vm.empresa = "WIFI Gratis";
 	vm.copyright = "GoBo Technologies";
 	vm.descripcion = vm.empresa;
-	vm.numeroVersion = "1.3";
-	vm.nombreVersion = "pRdm";
+	vm.numeroVersion = "2.0";
+	vm.nombreVersion = "b ML";
 	vm.textoMenuBar = "WIFI Exclusivo para clientes";
 	vm.user="";             //Usuario y contraseña por defecto que sale en el form
 	vm.pass="";     
-	vm.condiciones = false; //Indica si están aceptadas o no las condiciones
+	vm.idioma = "es";       //Indica el idioma en el que está la aplicación
+    vm.condiciones = false; //Indica si están aceptadas o no las condiciones
 	$scope.status = "";     //Es el texto que sale tras aceptar o rechazar las condiciones de uso
 	
 
@@ -41,6 +42,36 @@ function mainController($scope, $mdDialog) {
 				}, function () {  //Canceló la ventana sin aceptar o declinar
 					vm.condiciones = false;
 					$scope.status = "Has cerrado la ventana sin aceptar o rechazar las condiciones. No podrás navegar mientras no sean aceptadas.";
+				});
+	};
+
+    //Función que muestra el cuadro de dialogo para aceptar las condiciones
+	vm.mostrarSelectorIdioma = function (ev) {
+			$mdDialog.show({
+					controller: DialogController,
+					templateUrl: 'multilenguaje.tmpl.html',
+					parent: angular.element(document.body),
+					targetEvent: ev,
+					clickOutsideToClose: true,
+					fullscreen: true // Only for -xs, -sm breakpoints.
+				})
+				.then(function (answer) { //En answer está el idioma escogido
+					vm.idioma = answer;
+				    switch (answer) {
+                        case "es":
+                            $scope.status = "Idioma español";
+                            break;
+                        case "en":
+                            $scope.status = "Language english";
+                            break;
+                        default:
+                            $scope.status = "Idioma por defecto - Español";
+                            vm.idioma = "es";
+                    }
+
+				}, function () {  //Canceló la ventana sin aceptar o declinar
+					vm.idioma = "es";
+					$scope.status = "Has cerrado la ventana sin cambiar el idioma";
 				});
 	};
 	

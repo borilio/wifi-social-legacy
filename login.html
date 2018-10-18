@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8"/>
 	<title>Zona WiFi Gratis</title>
 	<meta http-equiv="pragma" content="no-cache" />
 	<meta http-equiv="expires" content="-1" />
@@ -69,6 +69,10 @@
 			<md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
 				<md-tooltip md-direction="left" md-delay="300">Pulsa para borrar todos los valores y volver a empezar</md-tooltip>
 				<md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
+			</md-button>
+			<md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
+				<md-tooltip md-direction="left" md-delay="300">Pulsa para seleccionar el idioma de la aplicación</md-tooltip>
+				<md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
 			</md-button>
 		</div>
 	</md-toolbar>

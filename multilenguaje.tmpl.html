@@ -1,0 +1,34 @@
+<md-dialog aria-label="Condiciones de uso">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Selecciona lenguaje</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon aria-label="Reset" md-svg-src="img/ic_close_white_24px.svg"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <div layout="row">
+                <md-button class="md-fab" ng-click="answer('es')">
+                    <md-icon aria-label="ES" md-svg-src="img/lang/es.svg"></md-icon>
+                </md-button>
+                <md-button class="md-fab" ng-click="answer('en')">
+                    <md-icon aria-label="ES" md-svg-src="img/lang/en.svg"></md-icon>
+                </md-button>
+            </div>
+        </div>
+
+    </md-dialog-content>
+
+	<md-dialog-actions layout="row">
+		<md-button class="md-raised" ng-click="answer(true)">
+			Ok
+		</md-button>
+		<md-button class="md-raised" ng-click="answer(false)">
+			Cancel
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>
