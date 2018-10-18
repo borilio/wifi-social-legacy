@@ -38,6 +38,27 @@
     z-index: 0;
 }
 
+/*Botón de selección de idioma*/
+.btn-idioma {
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: cover;
+}
+/*Imagen para cada botón de idioma
+1.buscarlo en https://restcountries.eu/rest/v2/name/nombredelpais
+2.ponerlo en la carpeta /img/lang/xx.svg
+*/
+.btn-idioma-es {
+    background-image: url(../img/lang/es.svg);
+}
+.btn-idioma-en {
+    background-image: url(../img/lang/en.svg);
+}
+.btn-idioma-fr {
+    background-image: url(../img/lang/fr.svg);
+}
+
+
 
 
 

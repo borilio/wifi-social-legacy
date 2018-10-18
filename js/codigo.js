@@ -30,7 +30,7 @@ function mainController($scope, $mdDialog) {
 					templateUrl: 'condiciones.tmpl.html',
 					parent: angular.element(document.body),
 					targetEvent: ev,
-					clickOutsideToClose: true,
+					clickOutsideToClose: false,
 					fullscreen: true // Only for -xs, -sm breakpoints.
 				})
 				.then(function (answer) { //Respondió o true o false
@@ -53,7 +53,7 @@ function mainController($scope, $mdDialog) {
 					parent: angular.element(document.body),
 					targetEvent: ev,
 					clickOutsideToClose: true,
-					fullscreen: true // Only for -xs, -sm breakpoints.
+					fullscreen: false // Only for -xs, -sm breakpoints.
 				})
 				.then(function (answer) { //En answer está el idioma escogido
 					vm.idioma = answer;

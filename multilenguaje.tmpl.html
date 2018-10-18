@@ -12,11 +12,16 @@
     <md-dialog-content>
         <div class="md-dialog-content">
             <div layout="row">
-                <md-button class="md-fab" ng-click="answer('es')">
-                    <md-icon aria-label="ES" md-svg-src="img/lang/es.svg"></md-icon>
+                <md-button class="md-fab btn-idioma btn-idioma-es" ng-click="answer('es')">
+                    <md-tooltip md-direction="top" md-delay="300">Español</md-tooltip>
                 </md-button>
-                <md-button class="md-fab" ng-click="answer('en')">
-                    <md-icon aria-label="ES" md-svg-src="img/lang/en.svg"></md-icon>
+
+                <md-button class="md-fab btn-idioma btn-idioma-en" ng-click="answer('en')">
+                    <md-tooltip md-direction="top" md-delay="300">English</md-tooltip>
+                </md-button>
+
+                <md-button class="md-fab btn-idioma btn-idioma-fr" ng-click="answer('fr')">
+                    <md-tooltip md-direction="top" md-delay="300">Français</md-tooltip>
                 </md-button>
             </div>
         </div>
