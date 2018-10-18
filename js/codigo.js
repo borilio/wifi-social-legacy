@@ -39,8 +39,9 @@ function mainController($scope, $mdDialog, $mdToast) {
 					vm.condiciones = answer;
 					if (answer){
 						$scope.status = "Has aceptado las condiciones de uso";
+					} else{
 						$scope.status = "No podrás navegar mientras no aceptes las condiciones";
-					}
+                    }
 				}, function () {  //Canceló la ventana sin aceptar o declinar
 					vm.condiciones = false;
 					$scope.status = "Has cerrado la ventana sin aceptar o rechazar las condiciones. No podrás navegar mientras no sean aceptadas.";
