@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Zona WiFi Gratis</title>
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+
+	<!-- ExprimeAndroid -->
+	<!--Jquery y Bootstrap-->
+	<script src="libreria/otras/jquery.min.js"></script>
+	<link rel="stylesheet" href="libreria/css/bootstrap.min.css" />
+	<script src="libreria/css/bootstrap.min.js"></script>
+
+	<!--Angular-->
+	<script src="libreria/angular/angular.min.js"></script>
+	<script src="libreria/angular/angular-route.min.js"></script>
+	<script src="libreria/angular/angular-animate.min.js"></script>
+	<script src="libreria/angular/angular-aria.min.js"></script>
+	<script src="libreria/angular/angular-messages.min.js"></script>
+
+	<!--Angular Material-->
+	<script src="libreria/angular/angular-material.min.js"></script>
+	<link rel="stylesheet" href="libreria/css/angular-material.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Lista completa de iconos en https://www.google.com/design/icons/-->
+
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="libreria/css/font-awesome.min.css"/>
+
+	<!--Archivos propios-->
+	<script src="js/codigo.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/login.css" />
+
+
+</head>
+
+<body id="body-pagina" class='login' ng-app="miModulo" ng-controller="miControlador as vm" ng-cloak>
+	$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript">
+		<!--
+		function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+		}
+		//-->
+	</script>
+	$(endif)
+
+	<md-toolbar class="md-hue-1" id="barra">
+		<div class="md-toolbar-tools">
+			<!-- Botón invisible por ahora -->
+			<md-button ng-disabled="true" ng-show="false">
+				<md-icon aria-label="Menú" class="material-icons">menu</md-icon>
+			</md-button>
+			<md-truncate class="flex">{{vm.textoMenuBar}}</md-truncate>
+			<md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
+				<md-tooltip md-direction="left" md-delay="300">Pulsa para borrar todos los valores y volver a empezar</md-tooltip>
+				<md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<form class="vertical-form" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+		<div>
+			<div class="container">
+
+				<md-card id="form" class="tarjeta">
+					<div class="row">
+					    <div class="col"></div>
+					    <div class="col-8 centrado logo">
+					        <img src="img/logo.png" class="md-card-image img-fluid" alt="Logo">    
+					    </div>
+					    <div class="col"></div>
+						
+					</div>
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline"></span>
+						</md-card-title-text>
+					</md-card-title>
+
+					<md-card-content>
+						<div layout="column" layout-align="center">
+							<div ng-show="vm.condiciones==true">
+								<md-input-container class="md-block">
+									<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
+									<label>Usuario</label>
+									<input name="username" type="text" value="" ng-model="vm.user" size="30" />
+								</md-input-container>
+								<md-input-container class="md-block">
+									<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg"></md-icon>
+									<label>Contraseña</label>
+									<input autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
+								</md-input-container>
+							</div>
+							
+							<md-button class="md-raised md-primary elipsis" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
+								<md-tooltip md-direction="top" md-delay="300">Para poder continuar, deberás leer y aceptar las condiciones de uso</md-tooltip>
+								<md-icon class="text-info" aria-label="ver-condiciones" md-svg-src="img/baseline-info-24px.svg"></md-icon>
+								<span>Uso del servicio</span>
+							</md-button>
+							<div ng-show="status!=''" class="text-center">
+								<p ng-class="{'badge badge-success': vm.condiciones===true, 'badge badge-danger': vm.condiciones===false}">
+									<md-truncate class="flex elipsis">{{status}}</md-truncate>
+								</p>
+							</div>
+							<md-button ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
+								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>Entrar</span>
+								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>Entrar</span>
+							</md-button>
+						</div>
+					</md-card-content>
+					<md-card-actions>
+						<!--Espacio para las acciones de la tarjeta-->
+					</md-card-actions>
+				</md-card>
+
+			</div>
+		</div>
+
+       <div class='footer'>
+                <p class="alert alert-info">$(if trial == 'yes')Para obtener Internet de cortesía gratis, <a class="alert-link" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">pulsa aquí</a>.$(endif)</p>
+                <p>$(if error)<span style="color: #FF8080; font-size: 16px">$(error)</span>$(endif)</p>
+                <br>
+                <p></p>
+		</div>    
+       
+	</form>
+	
+	
+    <footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie">
+        <div class="container">
+            <!-- Párrafo descripción (se oculta la descripción, si el footer se pone más chico)-->
+            <span class="lead text-truncate">{{vm.descripcion}}</span>
+            
+            <!-- Párrafo copyright-->
+            <span class="text-center">
+                <md-icon aria-label="copyright" class="text-light" md-svg-src="img/baseline-copyright-24px.svg"></md-icon>    
+                {{vm.copyright}}
+            </span>
+
+            <!-- Párrafo versión-->
+            <span class="small text-right">
+                <md-icon aria-label="code" class="text-light" md-svg-src="img/baseline-code-24px.svg"></md-icon>
+                v.{{vm.numeroVersion}}-{{vm.nombreVersion}}
+            </span>
+        </div>
+    </footer>
+    
+	<script type="text/javascript">
+		<!--
+		document.login.username.focus();
+		//-->
+	</script>
+	<script type="text/javascript">
+		document.oncontextmenu = function() {
+			return false;
+		}
+	</script>
+</body>
+
+</html>
