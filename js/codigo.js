@@ -4,9 +4,10 @@ Autor ExprimeAndroid(c)
 
 angular
 	.module("miModulo", ['ngMaterial', 'ngMessages'])
-	.controller("miControlador", ["$scope", "$mdDialog", mainController]);
+	.controller("miControlador", ["$scope", "$mdDialog", "$mdToast" , mainController])
+;
 
-function mainController($scope, $mdDialog) {
+function mainController($scope, $mdDialog, $mdToast) {
 	var vm = this;
 
 	//Configuración básica
@@ -16,11 +17,12 @@ function mainController($scope, $mdDialog) {
 	vm.numeroVersion = "2.0";
 	vm.nombreVersion = "b ML";
 	vm.textoMenuBar = "WIFI Exclusivo para clientes";
-	vm.user="";             //Usuario y contraseña por defecto que sale en el form
+	vm.user="";                 //Usuario y contraseña por defecto que sale en el form
 	vm.pass="";     
-	vm.idioma = "es";       //Indica el idioma en el que está la aplicación
-    vm.condiciones = false; //Indica si están aceptadas o no las condiciones
-	$scope.status = "";     //Es el texto que sale tras aceptar o rechazar las condiciones de uso
+	vm.idioma = "es";           //Indica el idioma en el que está la aplicación (en formato corto y largo)
+    vm.idiomaLargo = "Español";
+    vm.condiciones = false;     //Indica si están aceptadas o no las condiciones
+	$scope.status = "";         //Es el texto que sale tras aceptar o rechazar las condiciones de uso
 	
 
 	//Función que muestra el cuadro de dialogo para aceptar las condiciones
@@ -45,6 +47,25 @@ function mainController($scope, $mdDialog) {
 				});
 	};
 
+    //Función que muestra el cuadro de dialogo de ayuda
+	vm.mostrarAyuda = function (ev) {
+			$mdDialog.show({
+					controller: DialogController,
+					templateUrl: 'ayuda.tmpl.html',
+					parent: angular.element(document.body),
+					targetEvent: ev,
+					clickOutsideToClose: true,
+					fullscreen: false // Only for -xs, -sm breakpoints.
+				})
+				.then(function (answer) { //Respondió o true o false
+				    //No hacemos nada, ya que sólo es ayuda
+
+				}, function () {  //Canceló la ventana sin aceptar o declinar
+                    //No hacemos nada
+            });
+	};
+
+
     //Función que muestra el cuadro de dialogo para aceptar las condiciones
 	vm.mostrarSelectorIdioma = function (ev) {
 			$mdDialog.show({
@@ -59,19 +80,26 @@ function mainController($scope, $mdDialog) {
 					vm.idioma = answer;
 				    switch (answer) {
                         case "es":
-                            $scope.status = "Idioma español";
+                            vm.idiomaLargo = "Español";
+                            vm.muestraToast("Idioma establecido a Español");
                             break;
                         case "en":
-                            $scope.status = "Language english";
+                            vm.idiomaLargo = "English";
+                            vm.muestraToast("Language established to English");
+                            break;
+                        case "fr":
+                            vm.idiomaLargo = "Français";
+                            vm.muestraToast("Langue établie au français");
                             break;
                         default:
-                            $scope.status = "Idioma por defecto - Español";
-                            vm.idioma = "es";
+                            vm.idiomaLargo = "Español";
+                            vm.muestraToast("Establecido por defecto a Español");
                     }
 
 				}, function () {  //Canceló la ventana sin aceptar o declinar
 					vm.idioma = "es";
-					$scope.status = "Has cerrado la ventana sin cambiar el idioma";
+                    vm.idiomaLargo = "Español";
+                    vm.muestraToast("No seleccionaste ningún idioma, se elegirá el idioma por defecto");
 				});
 	};
 	
@@ -98,6 +126,32 @@ function mainController($scope, $mdDialog) {
 		vm.condiciones = false;
 		vm.user="";
 		vm.pass="";
+        vm.idioma = "es";
+        vm.idiomaLargo = "Español";
 	};
+
+
+    /**
+    Función que recibe un mensaje, una posición y una duración y muestra un Toast con esos valores.
+    mensaje es el mensaje que queremos mostrar
+    posicion puede valer top bottom left y right, por ej: si queremos arriba a la derecha pasamos "top left". Por defecto será "bottom right"
+    duración son los milisegundos que estará el toast (por defecto 3000)
+    */
+    vm.muestraToast = function(mensaje,posicion,duracion) {
+        if (duracion === undefined) {
+            duracion = 3000;
+        }
+        if (posicion === undefined) {
+            posicion = "bottom right";
+        }
+
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent(mensaje)
+            .position(posicion)
+            .hideDelay(duracion)
+        );
+    };
+
 
 } //Fin mainController

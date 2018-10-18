@@ -11,7 +11,7 @@
 
     <md-dialog-content>
         <div class="md-dialog-content">
-            <div layout="row">
+            <div layout="row" layout-align="space-around center">
                 <md-button class="md-fab btn-idioma btn-idioma-es" ng-click="answer('es')">
                     <md-tooltip md-direction="top" md-delay="300">Español</md-tooltip>
                 </md-button>
@@ -29,9 +29,6 @@
     </md-dialog-content>
 
 	<md-dialog-actions layout="row">
-		<md-button class="md-raised" ng-click="answer(true)">
-			Ok
-		</md-button>
 		<md-button class="md-raised" ng-click="answer(false)">
 			Cancel
 		</md-button>

@@ -36,6 +36,10 @@ Versión 2.0 (18/10/2018)
 -Inicio de gestión por GitHub de las versiones, partiendo de la anterior
 -Creación de una rama multilenguaje, para empezar con la versión 2.0
 -Añadido un botón superior que abre una ventana para pulsar el idioma
+-Añadido un botón superior que abre una ventana de ayuda
+-Añadida función mostrarToast para mostrar mensajes emergentes que se quitan automáticamente
+-Añadido enlace en la barra de estado, donde se muestra el idioma actual. También se puede cambiar desde ahí
+-
 
 
 

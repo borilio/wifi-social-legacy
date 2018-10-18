@@ -66,14 +66,19 @@
 				<md-icon aria-label="Menú" class="material-icons">menu</md-icon>
 			</md-button>
 			<md-truncate class="flex">{{vm.textoMenuBar}}</md-truncate>
+			<md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
+				<md-tooltip md-direction="left" md-delay="300">Mostrar ayuda</md-tooltip>
+				<md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
+			</md-button>
 			<md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
-				<md-tooltip md-direction="left" md-delay="300">Pulsa para borrar todos los valores y volver a empezar</md-tooltip>
+				<md-tooltip md-direction="left" md-delay="300">Pulsa para poner la aplicación con sus valores por defecto</md-tooltip>
 				<md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
 			</md-button>
 			<md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
 				<md-tooltip md-direction="left" md-delay="300">Pulsa para seleccionar el idioma de la aplicación</md-tooltip>
 				<md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
 			</md-button>
+
 		</div>
 	</md-toolbar>
 
@@ -149,20 +154,23 @@
 	
     <footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie">
         <div class="container">
-            <!-- Párrafo descripción (se oculta la descripción, si el footer se pone más chico)-->
+            <!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
             <span class="lead text-truncate">{{vm.descripcion}}</span>
             
-            <!-- Párrafo copyright-->
+            <!-- Trozo copyright-->
             <span class="text-center">
                 <md-icon aria-label="copyright" class="text-light" md-svg-src="img/baseline-copyright-24px.svg"></md-icon>    
                 {{vm.copyright}}
             </span>
 
-            <!-- Párrafo versión-->
+            <!-- Trozo versión-->
             <span class="small text-right">
                 <md-icon aria-label="code" class="text-light" md-svg-src="img/baseline-code-24px.svg"></md-icon>
                 v.{{vm.numeroVersion}}-{{vm.nombreVersion}}
             </span>
+
+            <!-- Trozo Idioma-->
+            <span><md-button class="md-primary" ng-click="vm.mostrarSelectorIdioma($event)">{{vm.idiomaLargo}}</md-button></span>
         </div>
     </footer>
     
