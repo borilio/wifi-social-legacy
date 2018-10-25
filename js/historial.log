@@ -39,7 +39,11 @@ Versión 2.0 (18/10/2018)
 -Añadido un botón superior que abre una ventana de ayuda
 -Añadida función mostrarToast para mostrar mensajes emergentes que se quitan automáticamente
 -Añadido enlace en la barra de estado, donde se muestra el idioma actual. También se puede cambiar desde ahí
--
+-Añadido favicon
+-Añadida carpeta /traducciones con archivos json, los cuales son cargados y volcados en un objeto vm.m de donde
+ se extraen los textos para la aplicación. Dependiendo de qué JSON se cargue, saldrán los textos en un idioma u otro.
+ 
+
 
 
 

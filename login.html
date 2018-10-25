@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="miModulo" ng-controller="miControlador as vm" ng-cloak>
 
 <head>
+	<title>{{vm.m.title}}</title>
 	<meta charset="utf-8"/>
-	<title>Zona WiFi Gratis</title>
 	<meta http-equiv="pragma" content="no-cache" />
 	<meta http-equiv="expires" content="-1" />
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="shortcut icon" href="img/wifi.ico"/>
 
 	<!-- ExprimeAndroid -->
 	<!--Jquery y Bootstrap-->
@@ -37,7 +38,7 @@
 
 </head>
 
-<body id="body-pagina" class='login' ng-app="miModulo" ng-controller="miControlador as vm" ng-cloak>
+<body id="body-pagina" class='login' >
 	$(if chap-id)
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
@@ -65,7 +66,7 @@
 			<md-button ng-disabled="true" ng-show="false">
 				<md-icon aria-label="Menú" class="material-icons">menu</md-icon>
 			</md-button>
-			<md-truncate class="flex">{{vm.textoMenuBar}}</md-truncate>
+			<md-truncate class="flex">{{vm.m.menuBar}}</md-truncate>
 			<md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
 				<md-tooltip md-direction="left" md-delay="300">Mostrar ayuda</md-tooltip>
 				<md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
@@ -170,7 +171,7 @@
             </span>
 
             <!-- Trozo Idioma-->
-            <span><md-button class="md-primary" ng-click="vm.mostrarSelectorIdioma($event)">{{vm.idiomaLargo}}</md-button></span>
+            <span><md-button class="md-primary" ng-click="vm.mostrarSelectorIdioma($event)">{{vm.m.desc}}</md-button></span>
         </div>
     </footer>
     

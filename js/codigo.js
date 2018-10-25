@@ -1,29 +1,15 @@
 /*
-Autor ExprimeAndroid(c)
+Autor ExprimeAndroid(c) by Gobo Technologies
 */
 
 angular
 	.module("miModulo", ['ngMaterial', 'ngMessages'])
-	.controller("miControlador", ["$scope", "$mdDialog", "$mdToast" , mainController])
+	.controller("miControlador", ["$scope", "$mdDialog", "$mdToast", "$http" , mainController])
 ;
 
-function mainController($scope, $mdDialog, $mdToast) {
+function mainController($scope, $mdDialog, $mdToast, $http) {
 	var vm = this;
 
-	//Configuración básica
-	vm.empresa = "WIFI Gratis";
-	vm.copyright = "GoBo Technologies";
-	vm.descripcion = vm.empresa;
-	vm.numeroVersion = "2.0";
-	vm.nombreVersion = "b ML";
-	vm.textoMenuBar = "WIFI Exclusivo para clientes";
-	vm.user="";                 //Usuario y contraseña por defecto que sale en el form
-	vm.pass="";     
-	vm.idioma = "es";           //Indica el idioma en el que está la aplicación (en formato corto y largo)
-    vm.idiomaLargo = "Español";
-    vm.condiciones = false;     //Indica si están aceptadas o no las condiciones
-	$scope.status = "";         //Es el texto que sale tras aceptar o rechazar las condiciones de uso
-	
 
 	//Función que muestra el cuadro de dialogo para aceptar las condiciones
 	vm.mostrarCondiciones = function (ev) {
@@ -79,28 +65,13 @@ function mainController($scope, $mdDialog, $mdToast) {
 				})
 				.then(function (answer) { //En answer está el idioma escogido
 					vm.idioma = answer;
-				    switch (answer) {
-                        case "es":
-                            vm.idiomaLargo = "Español";
-                            vm.muestraToast("Idioma establecido a Español");
-                            break;
-                        case "en":
-                            vm.idiomaLargo = "English";
-                            vm.muestraToast("Language established to English");
-                            break;
-                        case "fr":
-                            vm.idiomaLargo = "Français";
-                            vm.muestraToast("Langue établie au français");
-                            break;
-                        default:
-                            vm.idiomaLargo = "Español";
-                            vm.muestraToast("Establecido por defecto a Español");
-                    }
+				    //Rellenamos el objeto m con los atributos del JSON seleccionado
+                    vm.cargarIdioma(vm.idioma);
+                    //El toast lo mostramos en cargarIdioma(), ya que si no al ser asincrono, es posible que
+                    //cuando termine cargarIdioma() todavía vm.m.change valga todavía lo anterior y no salía bien el mensaje
 
-				}, function () {  //Canceló la ventana sin aceptar o declinar
-					vm.idioma = "es";
-                    vm.idiomaLargo = "Español";
-                    vm.muestraToast("No seleccionaste ningún idioma, se elegirá el idioma por defecto");
+                }, function () {  //Canceló la ventana sin aceptar o declinar
+				    //No hacemos nada, lo dejamos todo tal y como está...
 				});
 	};
 	
@@ -153,6 +124,52 @@ function mainController($scope, $mdDialog, $mdToast) {
             .hideDelay(duracion)
         );
     };
+
+    /**
+    Función que hace una consulta Ajax y vuelca un JSON en un objeto vm.m donde estarán todos los textos
+    para el idioma seleccionado.
+    codigo - String con el código de idioma para cargar. 'es' para español, 'en' para english y así...
+    El objeto JSON se vuelca en el atributo vm.m
+    */
+    vm.cargarIdioma = function (codigo) {
+        var exito = function(resp) {
+            vm.m = resp.data;
+            vm.muestraToast(vm.m.change);
+		};
+
+		var error = function(error) {
+            vm.muestraToast("Error while loading languages. Sorry.");
+		};
+
+		//Hacemos la consulta ajax y si va bien, se ejecutará la función éxito, si no error
+        var url = "traducciones/" + vm.idioma + ".json";
+        $http.get(url).then(exito, error);
+    };
+
+    //NOTE: Una vez definido, aquí empieza la ejecución del programa
+
+    /******************************************************************************************/
+    /********        ¡¡¡¡ Aquí empieza todo  !!!!   *******************************************/
+    /******************************************************************************************/
+
+    //Configuración básica
+    vm.empresa = "WIFI Gratis";
+    vm.copyright = "GoBo Technologies";
+    vm.descripcion = vm.empresa;
+    vm.numeroVersion = "2.0";
+    vm.nombreVersion = "b ML";
+
+    //Seleccionamos español por defecto
+    vm.idioma = "es";
+    vm.m = {};
+    vm.cargarIdioma(vm.idioma);  //Y rellenamos el objeto m con los textos para el idioma seleccionado
+
+
+    //Valores por defecto...
+    vm.user="";                 //Usuario y contraseña por defecto que sale en el form
+    vm.pass="";
+    vm.condiciones = false;     //Indica si están aceptadas o no las condiciones
+    $scope.status = "";         //Es el texto que sale tras aceptar o rechazar las condiciones de uso
 
 
 } //Fin mainController
