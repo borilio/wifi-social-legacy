@@ -1,12 +1,45 @@
 {
-    "code": "EN",
+    "_init": "Configuración inicial",
+    "code": "en",
     "desc": "English",
-    "title": "Free Wifi Zone",
-    "menuBar": "Exclusive WIFI for customers",
+    "title": "WIFI Free Zone",
+    "menuBar": "WIFI exclusive for customers",
+
+    "_toolTip": "Texto en los toolTipText",
+    "tipAyuda": "Show help",
+    "tipIdioma": "Change language",
+    "tipReset": "Load defaults settings",
+    "tipUsoServicio": "To continue, you must read and accept the terms of use",
 
 
-    "change": "Language established to English",
+    "_formulario": "Parte del formulario",
+    "formUser": "User",
+    "formPass": "Password",
+    "formUso": "Use of service",
+    "formEntrar" : "Enter",
+
+    "_condiciones": "Trozo de texto sobre la aceptación o no de las condiciones de uso",
+    "condAcepto" : "You have accepted the terms of use",
+    "condNoAcepto" : "You will not be able to navigate while you do not accept the conditions",
+    "condElse": "You have closed the window. You will not be able to navigate while you do not accept the conditions",
 
 
-    "close": "Este es el último atributo, añadir todos los atributos por encima de éste."
+    "_idioma": "Parte de todo lo relacionado con el cambio de idioma",
+    "langChange": "Language established to English",
+    "langSelecciona" : "Select language",
+
+    "_comun": "Parte para textos comunes",
+    "comSi": "Yes",
+    "comNo": "No",
+    "comCancelar": "Cancel",
+    "comOk": "Ok",
+    "comCerrar": "Close",
+
+    "_ayuda" : "Parte para la página de ayuda",
+    "hAyuda" : "Help",
+    "hHeader": "Help text",
+    "hPar1"  : "Content of help for bastard and motherfuckers",
+
+
+    "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
 }

@@ -1,0 +1,45 @@
+{
+    "_init": "Configuración inicial",
+    "code": "fr",
+    "desc": "Français",
+    "title": "Zone WIFI gratuite",
+    "menuBar": "WIFI exclusif pour les clients",
+
+    "_toolTip": "Texto en los toolTipText",
+    "tipAyuda": "Afficher l'aide",
+    "tipIdioma": "Changer la langue",
+    "tipReset": "Charger les valeurs par défaut",
+    "tipUsoServicio": "Para poder continuar, deberás leer y aceptar las condiciones de uso",
+
+
+    "_formulario": "Parte del formulario",
+    "formUser": "Utilisateur",
+    "formPass": "Mot de passe",
+    "formUso": "Utilisation du service",
+    "formEntrar" : "Entrer",
+
+    "_condiciones": "Trozo de texto sobre la aceptación o no de las condiciones de uso",
+    "condAcepto" : "Vous avez accepté les conditions d'utilisation",
+    "condNoAcepto" : "Vous ne pourrez pas naviguer sans accepter les conditions",
+    "condElse": "Vous avez fermé la fenêtre. Vous ne pourrez pas naviguer tant qu'ils ne sont pas acceptés",
+
+
+    "_idioma": "Parte de todo lo relacionado con el cambio de idioma",
+    "langChange": "Langue établie au Français",
+    "langSelecciona" : "Sélectionnez la langue",
+
+    "_comun": "Parte para textos comunes",
+    "comSi": "Oui",
+    "comNo": "Non",
+    "comCancelar": "Annuler",
+    "comOk": "Ok",
+    "comCerrar": "Fermer",
+
+    "_ayuda" : "Parte para la página de ayuda",
+    "hAyuda" : "L'aide",
+    "hHeader": "Texto de ayuda en francés",
+    "hPar1"  : "Contenido de la ayuda para el párrafo1, que se cambiará en francés cuando se ponga primero en español",
+
+
+    "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
+}

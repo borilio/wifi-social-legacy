@@ -1,12 +1,45 @@
 {
-    "code": "ES",
+    "_init": "Configuración inicial",
+    "code": "es",
     "desc": "Español",
     "title": "Zona Wifi Gratis",
     "menuBar": "WIFI Exclusivo para clientes",
 
+    "_toolTip": "Texto en los toolTipText",
+    "tipAyuda": "Mostrar ayuda",
+    "tipIdioma": "Cambiar idioma",
+    "tipReset": "Cargar valores por defecto",
+    "tipUsoServicio": "Para poder continuar, deberás leer y aceptar las condiciones de uso",
 
-    "change": "Idioma establecido a Español",
+
+    "_formulario": "Parte del formulario",
+    "formUser": "Usuario",
+    "formPass": "Contraseña",
+    "formUso": "Uso del servicio",
+    "formEntrar" : "Entrar",
+
+    "_condiciones": "Trozo de texto sobre la aceptación o no de las condiciones de uso",
+    "condAcepto" : "Has aceptado las condiciones de uso",
+    "condNoAcepto" : "No podrás navegar mientras no aceptes las condiciones",
+    "condElse": "Has cerrado la ventana. No podrás navegar mientras no sean aceptadas",
 
 
-    "close": "Este es el último atributo, añadir todos los atributos por encima de éste."
+    "_idioma": "Parte de todo lo relacionado con el cambio de idioma",
+    "langChange": "Idioma establecido a Español",
+    "langSelecciona" : "Selecciona idioma",
+
+    "_comun": "Parte para textos comunes",
+    "comSi": "Si",
+    "comNo": "No",
+    "comCancelar": "Cancelar",
+    "comOk": "Ok",
+    "comCerrar": "Cerrar",
+
+    "_ayuda" : "Parte para la página de ayuda",
+    "hAyuda" : "Ayuda",
+    "hHeader": "Texto de ayuda",
+    "hPar1"  : "Contenido de la ayuda para el párrafo1",
+
+
+    "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
 }

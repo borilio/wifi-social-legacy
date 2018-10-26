@@ -68,15 +68,15 @@
 			</md-button>
 			<md-truncate class="flex">{{vm.m.menuBar}}</md-truncate>
 			<md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
-				<md-tooltip md-direction="left" md-delay="300">Mostrar ayuda</md-tooltip>
+				<md-tooltip md-direction="left" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
 				<md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
 			</md-button>
 			<md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
-				<md-tooltip md-direction="left" md-delay="300">Pulsa para poner la aplicación con sus valores por defecto</md-tooltip>
+				<md-tooltip md-direction="left" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
 				<md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
 			</md-button>
 			<md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
-				<md-tooltip md-direction="left" md-delay="300">Pulsa para seleccionar el idioma de la aplicación</md-tooltip>
+				<md-tooltip md-direction="left" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
 				<md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
 			</md-button>
 
@@ -109,20 +109,20 @@
 							<div ng-show="vm.condiciones==true">
 								<md-input-container class="md-block">
 									<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
-									<label>Usuario</label>
+									<label>{{vm.m.formUser}}</label>
 									<input name="username" type="text" value="" ng-model="vm.user" size="30" />
 								</md-input-container>
 								<md-input-container class="md-block">
 									<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg"></md-icon>
-									<label>Contraseña</label>
+									<label>{{vm.m.formPass}}</label>
 									<input autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
 								</md-input-container>
 							</div>
 							
 							<md-button class="md-raised md-primary elipsis" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
-								<md-tooltip md-direction="top" md-delay="300">Para poder continuar, deberás leer y aceptar las condiciones de uso</md-tooltip>
+								<md-tooltip md-direction="top" md-delay="300">{{vm.m.tipUsoServicio}}</md-tooltip>
 								<md-icon class="text-info" aria-label="ver-condiciones" md-svg-src="img/baseline-info-24px.svg"></md-icon>
-								<span>Uso del servicio</span>
+								<span>{{vm.m.formUso}}</span>
 							</md-button>
 							<div ng-show="status!=''" class="text-center">
 								<p ng-class="{'badge badge-success': vm.condiciones===true, 'badge badge-danger': vm.condiciones===false}">
@@ -130,8 +130,8 @@
 								</p>
 							</div>
 							<md-button ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
-								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>Entrar</span>
-								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>Entrar</span>
+								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
+								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 							</md-button>
 						</div>
 					</md-card-content>
@@ -143,7 +143,8 @@
 			</div>
 		</div>
 
-       <div class='footer'>
+        <!-- TODO: Falta traducir éste trocito -->
+        <div class='footer'>
                 <p class="alert alert-info">$(if trial == 'yes')Para obtener Internet de cortesía gratis, <a class="alert-link" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">pulsa aquí</a>.$(endif)</p>
                 <p>$(if error)<span style="color: #FF8080; font-size: 16px">$(error)</span>$(endif)</p>
                 <br>
