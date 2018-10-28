@@ -1,7 +1,7 @@
 <md-dialog aria-label="Ayuda">
 	<md-toolbar>
 		<div class="md-toolbar-tools">
-			<h2>{{vm.m.hAyuda}}</h2>
+			<h2>{{m.hAyuda}}</h2>
 			<span flex></span>
 			<md-button class="md-icon-button" ng-click="cancel()">
 				<md-icon aria-label="Close" md-svg-src="img/ic_close_white_24px.svg"></md-icon>
@@ -12,8 +12,8 @@
     <md-dialog-content>
         <div class="md-dialog-content">
             <div layout="column">
-                <h3>{{vm.m.hHeader}}</h3>
-                <p>{{vm.m.hPar1}}</p>
+                <h3>{{m.hHeader}}</h3>
+                <p>{{m.hPar1}}</p>
             </div>
         </div>
 
@@ -21,7 +21,7 @@
 
 	<md-dialog-actions layout="row">
 		<md-button class="md-raised" ng-click="answer(true)">
-			{{vm.m.comOk}}
+			{{m.comOk}}
 		</md-button>
 	</md-dialog-actions>
 </md-dialog>
