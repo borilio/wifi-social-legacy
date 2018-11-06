@@ -41,6 +41,8 @@
 </head>
 
 <body id="body-pagina" class='login' >
+
+    <!--
 	$(if chap-id)
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
@@ -51,16 +53,16 @@
 
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript">
-		<!--
+
 		function doLogin() {
 			document.sendin.username.value = document.login.username.value;
 			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
 			document.sendin.submit();
 			return false;
 		}
-		//-->
 	</script>
 	$(endif)
+    -->
 
 	<md-toolbar class="md-hue-1 flex" id="barra">
 		<div class="md-toolbar-tools">
@@ -68,37 +70,39 @@
 			<md-button ng-disabled="true" ng-show="false" class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-            <md-truncate flex>
-                Probando {{vm.m.menuBar}}
-            </md-truncate>
+            <h2>
+                <md-truncate flex>
+                Y si no cabe que pasa {{vm.m.menuBar}}
+                </md-truncate>
+            </h2>
 
             <!-- Esto rellena el hueco hasta el final -->
             <span flex></span>
             <!-- Botón fab-dial -->
-                <md-fab-speed-dial md-open="false" md-direction="left" class="md-fling md-hover-full">
-                    <md-fab-trigger>
-                        <md-button aria-label="more" class="md-fab md-mini">
-                            <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
-                        </md-button>
-                    </md-fab-trigger>
+            <md-fab-speed-dial md-open="false" md-direction="left" class="md-fling">
+                <md-fab-trigger>
+                    <md-button aria-label="more" class="md-fab md-mini flotando">
+                        <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
+                    </md-button>
+                </md-fab-trigger>
 
-                    <md-fab-actions>
-                        <!--Botones flotantes -->
-                        <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
-                            <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
-                            <md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
-                        </md-button>
-                        <md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
-                            <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
-                            <md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
-                        </md-button>
-                        <md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
-                            <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
-                            <md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
-                        </md-button>
-                    </md-fab-actions>
-                </md-fab-speed-dial>
-            </div>
+                <md-fab-actions>
+                    <!--Botones flotantes -->
+                    <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
+                        <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
+                        <md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
+                        <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
+                        <md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
+                        <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
+                        <md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </div>
 	</md-toolbar>
 
 
@@ -179,12 +183,14 @@
 		</div>
 
         <!-- TODO: Falta traducir éste trocito -->
+        <!--
         <div class='footer'>
                 <p class="alert alert-info">$(if trial == 'yes')Para obtener Internet de cortesía gratis, <a class="alert-link" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">pulsa aquí</a>.$(endif)</p>
                 <p>$(if error)<span style="color: #FF8080; font-size: 16px">$(error)</span>$(endif)</p>
                 <br>
                 <p></p>
-		</div>    
+		</div>
+        -->
        
 	</form>
 	
