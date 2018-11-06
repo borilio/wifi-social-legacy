@@ -62,28 +62,46 @@
 	</script>
 	$(endif)
 
-	<md-toolbar class="md-hue-1" id="barra">
+	<md-toolbar class="md-hue-1 flex" id="barra">
 		<div class="md-toolbar-tools">
-			<!-- Botón invisible por ahora -->
-			<md-button ng-disabled="true" ng-show="false">
-				<md-icon aria-label="Menú" class="material-icons">menu</md-icon>
+            <!-- Botón invisible por ahora -->
+			<md-button ng-disabled="true" ng-show="true" class="md-icon-button">
+				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-			<md-truncate class="flex">{{vm.m.menuBar}}</md-truncate>
-			<md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
-				<md-tooltip md-direction="left" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
-				<md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
-			</md-button>
-			<md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
-				<md-tooltip md-direction="left" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
-				<md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
-			</md-button>
-			<md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
-				<md-tooltip md-direction="left" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
-				<md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
-			</md-button>
+            <md-truncate flex>
+                {{vm.m.menuBar}}
+            </md-truncate>
 
-		</div>
+            <!-- Esto rellena el hueco hasta el final -->
+            <span flex></span>
+            <!-- Botón fab-dial -->
+                <md-fab-speed-dial md-open="false" md-direction="left" class="md-fling md-hover-full">
+                    <md-fab-trigger>
+                        <md-button aria-label="more" class="md-fab md-mini">
+                            <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+
+                    <md-fab-actions>
+                        <!--Botones flotantes -->
+                        <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
+                            <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
+                            <md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
+                        </md-button>
+                        <md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
+                            <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
+                            <md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
+                        </md-button>
+                        <md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
+                            <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
+                            <md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </div>
 	</md-toolbar>
+
+
 
 	<form class="vertical-form" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
 		<input type="hidden" name="dst" value="$(link-orig)" />
