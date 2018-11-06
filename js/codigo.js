@@ -3,7 +3,6 @@ Autor ExprimeAndroid(c) by Gobo Technologies
 */
 
 
-//TODO: Y añadir un párrafo diciendo, AHORA puede introducir sus credenciales y pulsar entrar...
 //TODO: Grabar un video y ponerlo en la ayuda (o capturas, o gif, si es muy grande)
 
 
