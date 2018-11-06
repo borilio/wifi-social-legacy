@@ -75,14 +75,14 @@
             <!-- Esto rellena el hueco hasta el final -->
             <span flex></span>
             <!-- Botón fab-dial -->
-            <md-fab-speed-dial md-open="false" md-direction="left" class="md-fling">
+            <md-fab-speed-dial md-direction="left" class="md-fling md-full-hover" md-open="vm.fabOpen">
                 <md-fab-trigger>
-                    <md-button aria-label="more" class="md-icon-button" ng-click="vm.fabOpen=!vm.fabOpen">
+                    <md-button aria-label="more" class="md-fab md-mini">
                         <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
                     </md-button>
                 </md-fab-trigger>
 
-                <md-fab-actions ng-show="vm.fabOpen">
+                <md-fab-actions>
                     <!--Botones flotantes -->
                     <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
                         <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>

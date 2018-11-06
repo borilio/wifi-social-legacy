@@ -17,31 +17,33 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 
 	//Función que muestra el cuadro de dialogo para aceptar las condiciones
 	vm.mostrarCondiciones = function (ev) {
-			$mdDialog.show({
-					controller: vm.DialogController,
-                    locals : {m : vm.m},
-					templateUrl: 'templates/cond-' + vm.idioma + '.tmpl.html',
-					parent: angular.element(document.body),
-					targetEvent: ev,
-					clickOutsideToClose: false,
-					fullscreen: true // Only for -xs, -sm breakpoints.
-				})
-				.then(function (answer) { //Respondió o true o false
-					vm.condiciones = answer;
-					if (answer){
-						$scope.status = vm.m.condAcepto;
-					} else{
-						$scope.status = vm.m.condNoAcepto;
-                    }
-				}, function () {  //Canceló la ventana sin aceptar o declinar
-					vm.condiciones = false;
-					$scope.status = vm.m.condElse;
-				});
+	    $mdDialog.show({
+	            controller: vm.DialogController,
+	            locals: {
+	                m: vm.m
+	            },
+	            templateUrl: 'templates/cond-' + vm.idioma + '.tmpl.html',
+	            parent: angular.element(document.body),
+	            targetEvent: ev,
+	            clickOutsideToClose: false,
+	            fullscreen: true // Only for -xs, -sm breakpoints.
+	        })
+	        .then(function (answer) { //Respondió o true o false
+	            vm.condiciones = answer;
+	            if (answer) {
+	                $scope.status = vm.m.condAcepto;
+	            } else {
+	                $scope.status = vm.m.condNoAcepto;
+	            }
+	        }, function () { //Canceló la ventana sin aceptar o declinar
+	            vm.condiciones = false;
+	            $scope.status = vm.m.condElse;
+	        });
 	};
 
     //Función que muestra el cuadro de dialogo de ayuda
 	vm.mostrarAyuda = function (ev) {
-			$mdDialog.show({
+        $mdDialog.show({
 					controller: vm.DialogController,
                     locals : {m : vm.m},
 					templateUrl: 'templates/ayuda.tmpl.html',
@@ -61,25 +63,27 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 
     //Función que muestra el cuadro de dialogo para aceptar las condiciones
 	vm.mostrarSelectorIdioma = function (ev) {
-			$mdDialog.show({
-					controller: vm.DialogController,
-					locals : {m : vm.m},
-                    templateUrl: 'templates/multi.tmpl.html',
-					parent: angular.element(document.body),
-					targetEvent: ev,
-					clickOutsideToClose: true,
-					fullscreen: false // Only for -xs, -sm breakpoints.
-				})
-				.then(function (answer) { //En answer está el idioma escogido
-					vm.idioma = answer;
-				    //Rellenamos el objeto m con los atributos del JSON seleccionado
-                    vm.cargarIdioma(vm.idioma);
-                    //El toast lo mostramos en cargarIdioma(), ya que si no al ser asincrono, es posible que
-                    //cuando termine cargarIdioma() todavía vm.m.langChange valga todavía lo anterior y no salía bien el mensaje
+	    $mdDialog.show({
+	            controller: vm.DialogController,
+	            locals: {
+	                m: vm.m
+	            },
+	            templateUrl: 'templates/multi.tmpl.html',
+	            parent: angular.element(document.body),
+	            targetEvent: ev,
+	            clickOutsideToClose: true,
+	            fullscreen: false // Only for -xs, -sm breakpoints.
+	        })
+	        .then(function (answer) { //En answer está el idioma escogido
+	            vm.idioma = answer;
+	            //Rellenamos el objeto m con los atributos del JSON seleccionado
+	            vm.cargarIdioma(vm.idioma);
+	            //El toast lo mostramos en cargarIdioma(), ya que si no al ser asincrono, es posible que
+	            //cuando termine cargarIdioma() todavía vm.m.langChange valga todavía lo anterior y no salía bien el mensaje
 
-                }, function () {  //Canceló la ventana sin aceptar o declinar
-				    //No hacemos nada, lo dejamos todo tal y como está...
-				});
+	        }, function () { //Canceló la ventana sin aceptar o declinar
+	            //No hacemos nada, lo dejamos todo tal y como está...
+	        });
 	};
 
 	//Función que muestra u oculta el cuadro de diálogo
@@ -109,6 +113,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 		vm.pass="";
         vm.idioma = "es";
         vm.cargarIdioma(vm.idioma);
+        vm.fabOpen = false;
     };
 
 
@@ -167,7 +172,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.copyright = "GoBo Technologies";
     vm.descripcion = vm.empresa;
     vm.numeroVersion = "2.0";
-    vm.nombreVersion = "b ML";
+    vm.nombreVersion = "G ML";
 
     //Seleccionamos español por defecto
     vm.idioma = "es";
