@@ -1,0 +1,54 @@
+<md-dialog aria-label="Condiciones de uso">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Condition d'utilisation</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon aria-label="Reset" md-svg-src="img/ic_close_white_24px.svg"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<h3>Conditions d'utilisation WI-FI</h3>
+			<h4>Utilisation du réseau WI-FI de CET ÉTABLISSEMENT</h4>
+			<ul>
+				<li>En accédant et en utilisant le réseau WI-FI de CET ÉTABLISSEMENT, vous déclarez avoir lu, compris et accepté les termes et conditions d'utilisation. Si vous n'êtes pas d'accord avec cette règle, vous ne pourrez pas accéder à ce service.</li>
+				<li>Le réseau WI-FI est exclusivement destiné à l'usage exclusif des clients situés dans CET ÉTABLISSEMENT.</li>
+				<li>Vous acceptez et reconnaissez qu'il existe des risques potentiels liés à un service WI-FI. Vous devez faire attention lorsque vous transmettez des données telles que: numéro de carte de crédit, mots de passe ou autres informations personnelles sensibles via des réseaux WI-FI. CET ÉTABLISSEMENT ne peut et ne garantit pas la confidentialité et la sécurité de vos données et communications lorsque vous utilisez ce service.</li>
+				<li>CET ÉTABLISSEMENT ne garantit pas le niveau de fonctionnement du réseau WI-FI. Le service peut ne pas être disponible ou limité à tout moment et pour quelque raison que ce soit, notamment en cas d'urgence, de surcharge de connexion, de défaillance de la liaison, de problèmes d'équipement de réseau, de brouillage ou de force du signal. CET ÉTABLISSEMENT, n'est pas responsable des données, des messages ou des pages perdus, non sauvegardés ou des retards dus à des interruptions ou des problèmes de performances avec le service.</li>
+				<li>CET ÉTABLISSEMENT, peut établir des limites d'utilisation, suspendre le service ou bloquer certains comportements, accéder à certains services ou domaines pour protéger le réseau de CET ÉTABLISSEMENT de fraudes ou d'activités contrevenant aux lois nationales ou internationales.</li>
+			</ul>
+			<h4 class="alert alert-danger">Le réseau WI-FI ne peut pas être utilisé aux fins suivantes</h4>
+			<ul>
+				<li>Transmission de contenu frauduleux, diffamatoire, obscène, offensant ou vandalisme, insultant ou harcelant un contenu, qu'il s'agisse de contenu ou de messages.</li>
+				<li>Intercepter, collecter ou stocker des données sur des tiers à votre insu et sans votre consentement. Analysez ou testez la vulnérabilité des ordinateurs, des systèmes ou des segments de réseau. Envoyez des messages non sollicités (spam), des virus ou des attaques internes ou externes au réseau de CET ÉTABLISSEMENT.</li>
+				<li>Obtenez un accès non autorisé à du matériel, des systèmes ou des programmes appartenant au réseau de CET ÉTABLISSEMENT et à l’extérieur. Vous ne pouvez pas non plus utiliser le réseau WI-FI pour obtenir, manipuler et partager un fichier sans disposer des droits de propriété intellectuelle.</li>
+				<li>Transmettez, copiez et / ou téléchargez tout matériel enfreignant les lois en vigueur. Cela inclut, entre autres: du matériel protégé par le droit d'auteur, de la pornographie enfantine, du matériel menaçant ou obscène, ou du matériel protégé par un secret commercial ou des brevets.</li>
+                <li>Endommager des équipements, des systèmes informatiques ou des réseaux et / ou perturber le fonctionnement normal du réseau. Être utilisé à des fins lucratives, commerciales ou illégales, par exemple le piratage. Être utilisé pour créer et / ou infecter des virus informatiques ou des logiciels malveillants sur le réseau.</li>
+			</ul>
+			<p class="alert alert-info">
+				<strong>
+				J'ai lu et compris les présentes conditions d'utilisation du réseau WI-FI et déclare déclarer connaître les règles et normes établies par CET ÉTABLISSEMENT. J'accepte de respecter les directives ci-dessus et de comprendre que le non-respect de celles-ci peut entraîner le blocage de mes droits d'utiliser le réseau WI-FI et des sanctions juridiques, le cas échéant.
+				</strong>
+
+			</p>
+
+		</div>
+
+	</md-dialog-content>
+
+	<md-dialog-actions layout="row">
+		<md-button href="http://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-20253" target="_blank" md-autofocus>
+            Plus d'informations
+		</md-button>
+		<span flex></span>
+		<md-button class="md-raised" ng-click="answer(true)">
+			Accepter
+		</md-button>
+		<md-button class="md-raised" ng-click="answer(false)">
+			Rejeter
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,54 @@
+<md-dialog aria-label="Condiciones de uso">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Terms of use</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon aria-label="Reset" md-svg-src="img/ic_close_white_24px.svg"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+		<div class="md-dialog-content">
+			<h3>Conditions of use WI-FI</h3>
+			<h4>Use of the WI-FI network of THIS ESTABLISHMENT</h4>
+			<ul>
+				<li>By accessing and using the WI-FI network of THIS ESTABLISHMENT, you declare that you have read, understand and accept the terms and conditions for its use. If you do not agree with this rule, you will not be able to access this service.</li>
+				<li>The WI-FI network is intended solely for the exclusive use of the clients located in THIS ESTABLISHMENT.</li>
+				<li>You accept and acknowledge that there are potential risks through a WI-FI service. You must be careful when transmitting data such as: credit card number, passwords or other sensitive personal information through WI-FI networks. THIS ESTABLISHMENT can not and does not guarantee the privacy and security of your data and communications when using this service.</li>
+				<li>THIS ESTABLISHMENT does not guarantee the level of operation of the WI-FI network. The service may not be available or limited at any time and for any reason, including emergencies, connection overload, link failure, network equipment problems, interference or signal strength. THIS ESTABLISHMENT, is not responsible for data, messages or pages lost, not saved or delays due to interruptions or performance problems with the service.</li>
+				<li>THIS ESTABLISHMENT, can establish limits of use, suspend the service or block certain behaviors, access to certain services or domains to protect the network of THIS ESTABLISHMENT of frauds or activities that attempt against the national or international laws.</li>
+			</ul>
+			<h4 class="alert alert-danger">The WI-FI network can not be used for the following purposes</h4>
+			<ul>
+				<li>Transmission of fraudulent, defamatory, obscene, offensive or vandalism, insulting or harassing content, whether material or messages.</li>
+				<li>Intercept, collect or store data about third parties without your knowledge or consent. Scan or test the vulnerability of computers, systems or network segments. Send unsolicited messages (spam), viruses, or internal or external attacks to the network of THIS ESTABLISHMENT.</li>
+				<li>Obtain unauthorized access to equipment, systems or programs both within the network of THIS ESTABLISHMENT and outside it. Nor can you use the WI-FI network to obtain, manipulate and share any file without having the intellectual property rights.</li>
+				<li>Transmit, copy and / or download any material that violates any law. This includes, among others: copyrighted material, child pornography, threatening or obscene material, or material protected by trade secret or patents.</li>
+				<li>Damage equipment, computer systems or networks and / or disrupt the normal operation of the network. Be used for profit, commercial or illegal activities, for example hacking. Be used to create and / or infect with computer virus or malware on the network.</li>
+			</ul>
+			<p class="alert alert-info">
+				<strong>
+				I have read and understood these conditions of use of WI-FI network and I declare to know the policies and norms established by THIS ESTABLISHMENT. I agree to abide by the above guidelines and understand that non-compliance with these may result in the blocking of my rights to use the WI-FI network and assume legal sanctions if applicable.
+				</strong>
+
+			</p>
+
+		</div>
+
+	</md-dialog-content>
+
+	<md-dialog-actions layout="row">
+		<md-button href="http://www.boe.es/diario_boe/txt.php?id=BOE-A-2003-20253" target="_blank" md-autofocus>
+			More info
+		</md-button>
+		<span flex></span>
+		<md-button class="md-raised" ng-click="answer(true)">
+			Accept
+		</md-button>
+		<md-button class="md-raised" ng-click="answer(false)">
+			Decline
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>

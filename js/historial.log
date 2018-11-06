@@ -30,3 +30,24 @@ Versión 1.3 (19/05/2018)
 -Añadido elipsis al botón de "Ver condiciones de uso", cuando la pantalla es pequeña.
 -Añadido margen inferior de la tarjeta del formulario para separar del footer.
 -Cambiado el texto del botón "Ver condiciones de uso del servicio" por "Uso del servicio".
+
+Versión 2.0 (18/10/2018)
+================================================
+-Inicio de gestión por GitHub de las versiones, partiendo de la anterior
+-Creación de una rama multilenguaje, para empezar con la versión 2.0
+-Añadido un botón superior que abre una ventana para pulsar el idioma
+-Añadido un botón superior que abre una ventana de ayuda
+-Añadida función mostrarToast para mostrar mensajes emergentes que se quitan automáticamente
+-Añadido enlace en la barra de estado, donde se muestra el idioma actual. También se puede cambiar desde ahí
+-Añadido favicon
+-Añadida carpeta /traducciones con archivos json, los cuales son cargados y volcados en un objeto vm.m de donde
+ se extraen los textos para la aplicación. Dependiendo de qué JSON se cargue, saldrán los textos en un idioma u otro.
+-Añadida carpeta /templates para guardar ahí los archivos .tmpl.html de los diálogos, para tener versiones traducidas
+-Añadido color a la ventana de chrome en versión móvil
+-Cambios estéticos en como se muestra el estado de la aceptación (status). Ahora se muestra en un alert en lugar de un badge.
+
+
+
+
+
+

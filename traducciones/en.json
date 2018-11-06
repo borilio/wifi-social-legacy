@@ -1,0 +1,46 @@
+{
+    "_init": "Configuración inicial",
+    "code": "en",
+    "desc": "English",
+    "title": "WIFI Free Zone",
+    "menuBar": "WIFI for customers",
+
+    "_toolTip": "Texto en los toolTipText",
+    "tipAyuda": "Show help",
+    "tipIdioma": "Change language",
+    "tipReset": "Load defaults settings",
+    "tipUsoServicio": "To continue, you must read and accept the terms of use",
+
+
+    "_formulario": "Parte del formulario",
+    "formParrafo": "Now you can use the username and password provided by the establishment",
+    "formUser": "User",
+    "formPass": "Password",
+    "formUso": "Use of service",
+    "formEntrar" : "Enter",
+
+    "_condiciones": "Trozo de texto sobre la aceptación o no de las condiciones de uso",
+    "condAcepto" : "You have accepted the terms of use",
+    "condNoAcepto" : "You must accept the terms of use to be able to navigate",
+    "condElse": "You have closed the window. You will not be able to navigate while you do not accept the conditions",
+
+
+    "_idioma": "Parte de todo lo relacionado con el cambio de idioma",
+    "langChange": "Language established to English",
+    "langSelecciona" : "Select language",
+
+    "_comun": "Parte para textos comunes",
+    "comSi": "Yes",
+    "comNo": "No",
+    "comCancelar": "Cancel",
+    "comOk": "Ok",
+    "comCerrar": "Close",
+
+    "_ayuda" : "Parte para la página de ayuda",
+    "hAyuda" : "Help",
+    "hHeader": "Help text",
+    "hPar1"  : "Content of help for bastard and motherfuckers",
+
+
+    "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
+}

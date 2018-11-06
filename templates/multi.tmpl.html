@@ -1,0 +1,37 @@
+<md-dialog aria-label="Idioma" >
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>{{m.langSelecciona}}</h2>
+
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<md-icon aria-label="Close" md-svg-src="img/ic_close_white_24px.svg"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <div layout="row" layout-align="space-around center">
+                <md-button class="md-fab btn-idioma btn-idioma-es" ng-click="answer('es')">
+                    <md-tooltip md-direction="top" md-delay="700">Español</md-tooltip>
+                </md-button>
+
+                <md-button class="md-fab btn-idioma btn-idioma-en" ng-click="answer('en')">
+                    <md-tooltip md-direction="top" md-delay="700">English</md-tooltip>
+                </md-button>
+
+                <md-button class="md-fab btn-idioma btn-idioma-fr" ng-click="answer('fr')">
+                    <md-tooltip md-direction="top" md-delay="700">Français</md-tooltip>
+                </md-button>
+            </div>
+        </div>
+
+    </md-dialog-content>
+
+	<md-dialog-actions layout="row">
+		<md-button class="md-raised" ng-click="answer(false)">
+			{{m.comCancelar}}
+		</md-button>
+	</md-dialog-actions>
+</md-dialog>
