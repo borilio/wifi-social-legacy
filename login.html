@@ -70,9 +70,7 @@
 			<md-button ng-disabled="true" ng-show="true" class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-            <h3 class="elipsis">
-                {{vm.m.menuBar}}
-            </h3>
+            <h3>{{vm.m.menuBar}}</h3>
 
             <!-- Esto rellena el hueco hasta el final -->
             <span flex></span>
@@ -136,8 +134,8 @@
 						<div layout="column" layout-align="center">
 
 							<!-- Botón de condiciones y status -->
-							<md-button class="md-raised md-primary elipsis" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
-								<md-tooltip md-direction="top" md-delay="300">{{vm.m.tipUsoServicio}}</md-tooltip>
+							<md-button class="md-raised md-primary text-truncate" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
+								<md-tooltip md-direction="top" md-delay="700">{{vm.m.tipUsoServicio}}</md-tooltip>
 								<md-icon class="text-info" aria-label="ver-condiciones" md-svg-src="img/baseline-info-24px.svg"></md-icon>
 								<span>{{vm.m.formUso}}</span>
 							</md-button>

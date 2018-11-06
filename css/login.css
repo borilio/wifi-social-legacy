@@ -30,10 +30,6 @@
 	margin: 10px;
 }
 
-.elipsis {
-    text-overflow: ellipsis;
-}
-
 .pie {
     z-index: 0;
 }
