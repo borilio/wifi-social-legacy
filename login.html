@@ -67,21 +67,19 @@
 	<md-toolbar class="md-hue-1 flex" id="barra">
 		<div class="md-toolbar-tools">
             <!-- Botón invisible por ahora -->
-			<md-button ng-disabled="true" ng-show="false" class="md-icon-button">
+			<md-button ng-disabled="true" ng-show="true" class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-            <h2>
-                <md-truncate flex>
-                Y si no cabe que pasa {{vm.m.menuBar}}
-                </md-truncate>
-            </h2>
+            <h3 class="elipsis">
+                {{vm.m.menuBar}}
+            </h3>
 
             <!-- Esto rellena el hueco hasta el final -->
             <span flex></span>
             <!-- Botón fab-dial -->
             <md-fab-speed-dial md-open="false" md-direction="left" class="md-fling">
                 <md-fab-trigger>
-                    <md-button aria-label="more" class="md-fab md-mini flotando">
+                    <md-button aria-label="more" class="md-fab md-mini">
                         <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
                     </md-button>
                 </md-fab-trigger>
