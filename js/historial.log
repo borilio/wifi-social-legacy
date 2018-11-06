@@ -43,6 +43,8 @@ Versión 2.0 (18/10/2018)
 -Añadida carpeta /traducciones con archivos json, los cuales son cargados y volcados en un objeto vm.m de donde
  se extraen los textos para la aplicación. Dependiendo de qué JSON se cargue, saldrán los textos en un idioma u otro.
 -Añadida carpeta /templates para guardar ahí los archivos .tmpl.html de los diálogos, para tener versiones traducidas
+-Añadido color a la ventana de chrome en versión móvil
+
 
 
 
