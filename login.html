@@ -70,12 +70,12 @@
 			<md-button ng-disabled="true" ng-show="false" class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-            <h3>{{vm.m.menuBar}}</h3>
+            <h3 style="z-index: 2">{{vm.m.menuBar}}</h3>
 
             <!-- Esto rellena el hueco hasta el final -->
             <span flex></span>
             <!-- Botón fab-dial -->
-            <md-fab-speed-dial md-direction="left" class="md-fling md-full-hover" md-open="vm.fabOpen">
+            <md-fab-speed-dial  style="z-index: 3" md-direction="left" class="md-fling md-full-hover" md-open="vm.fabOpen">
                 <md-fab-trigger>
                     <md-button aria-label="more" class="md-fab md-mini">
                         <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
