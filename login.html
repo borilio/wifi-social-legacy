@@ -26,7 +26,8 @@
 	<!--Angular Material-->
 	<script src="libreria/angular/angular-material.min.js"></script>
 	<link rel="stylesheet" href="libreria/css/angular-material.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" />
 	<!--Lista completa de iconos en https://www.google.com/design/icons/-->
 
 	<!-- FontAwesome -->
@@ -87,27 +88,51 @@
 	<form class="vertical-form" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
 		<input type="hidden" name="dst" value="$(link-orig)" />
 		<input type="hidden" name="popup" value="true" />
+
+        <!-- Empieza la mandanga -->
 		<div>
 			<div class="container">
 
-				<md-card id="form" class="tarjeta">
-					<div class="row">
+                <md-card id="form" class="tarjeta">
+					<!-- Título y subtitulo de la tarjeta (vacíos por ahora...) -->
+					<md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline"></span>
+                            <span class="md-subhead"></span>
+                        </md-card-title-text>
+                    </md-card-title>
+
+                    <!-- Logo -->
+                    <div class="row">
 					    <div class="col"></div>
 					    <div class="col-8 centrado logo">
 					        <img src="img/logo.png" class="md-card-image img-fluid" alt="Logo">    
 					    </div>
 					    <div class="col"></div>
-						
 					</div>
-					<md-card-title>
-						<md-card-title-text>
-							<span class="md-headline"></span>
-						</md-card-title-text>
-					</md-card-title>
 
-					<md-card-content>
+                    <!-- Contenido de la tarjeta -->
+	                <md-card-content>
 						<div layout="column" layout-align="center">
+
+							<!-- Botón de condiciones y status -->
+							<md-button class="md-raised md-primary elipsis" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
+								<md-tooltip md-direction="top" md-delay="300">{{vm.m.tipUsoServicio}}</md-tooltip>
+								<md-icon class="text-info" aria-label="ver-condiciones" md-svg-src="img/baseline-info-24px.svg"></md-icon>
+								<span>{{vm.m.formUso}}</span>
+							</md-button>
+							<div ng-show="status!=''" class="text-center">
+								<div ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
+								    <span><strong>{{status}}</strong></span>
+								    <div ng-show="vm.condiciones===true">
+								        <span class="small">{{vm.m.formParrafo}}</span>
+								    </div>
+							    </div>
+                            </div>
+
+							<!-- Usuario y contraseña -->
 							<div ng-show="vm.condiciones==true">
+
 								<md-input-container class="md-block">
 									<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
 									<label>{{vm.m.formUser}}</label>
@@ -120,16 +145,7 @@
 								</md-input-container>
 							</div>
 							
-							<md-button class="md-raised md-primary elipsis" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
-								<md-tooltip md-direction="top" md-delay="300">{{vm.m.tipUsoServicio}}</md-tooltip>
-								<md-icon class="text-info" aria-label="ver-condiciones" md-svg-src="img/baseline-info-24px.svg"></md-icon>
-								<span>{{vm.m.formUso}}</span>
-							</md-button>
-							<div ng-show="status!=''" class="text-center">
-								<p ng-class="{'badge badge-success': vm.condiciones===true, 'badge badge-danger': vm.condiciones===false}">
-									<md-truncate class="flex elipsis">{{status}}</md-truncate>
-								</p>
-							</div>
+							<!-- Botón de entrar -->
 							<md-button ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
 								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>

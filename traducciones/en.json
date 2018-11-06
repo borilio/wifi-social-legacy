@@ -13,6 +13,7 @@
 
 
     "_formulario": "Parte del formulario",
+    "formParrafo": "Now you can use the username and password provided by the establishment",
     "formUser": "User",
     "formPass": "Password",
     "formUso": "Use of service",
@@ -20,7 +21,7 @@
 
     "_condiciones": "Trozo de texto sobre la aceptación o no de las condiciones de uso",
     "condAcepto" : "You have accepted the terms of use",
-    "condNoAcepto" : "You will not be able to navigate while you do not accept the conditions",
+    "condNoAcepto" : "You must accept the terms of use to be able to navigate",
     "condElse": "You have closed the window. You will not be able to navigate while you do not accept the conditions",
 
 
