@@ -70,19 +70,19 @@
 			<md-button ng-disabled="true" ng-show="false" class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-            <h3>{{vm.m.menuBar}}</h3>
+            <h3>Más largo del copón{{vm.m.menuBar}}</h3>
 
             <!-- Esto rellena el hueco hasta el final -->
             <span flex></span>
             <!-- Botón fab-dial -->
             <md-fab-speed-dial md-open="false" md-direction="left" class="md-fling">
                 <md-fab-trigger>
-                    <md-button aria-label="more" class="md-fab md-mini">
+                    <md-button aria-label="more" class="md-icon-button" ng-click="vm.fabOpen=!vm.fabOpen">
                         <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
                     </md-button>
                 </md-fab-trigger>
 
-                <md-fab-actions>
+                <md-fab-actions ng-show="vm.fabOpen">
                     <!--Botones flotantes -->
                     <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
                         <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>

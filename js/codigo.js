@@ -3,7 +3,6 @@ Autor ExprimeAndroid(c) by Gobo Technologies
 */
 
 
-//TODO: Y añadir un párrafo diciendo, AHORA puede introducir sus credenciales y pulsar entrar...
 //TODO: Grabar un video y ponerlo en la ayuda (o capturas, o gif, si es muy grande)
 
 
@@ -179,6 +178,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.user="";                 //Usuario y contraseña por defecto que sale en el form
     vm.pass="";
     vm.condiciones = false;     //Indica si están aceptadas o no las condiciones
+    vm.fabOpen = false;         //Indica si el speeddial está abierto o no
     $scope.status = "";         //Es el texto que sale tras aceptar o rechazar las condiciones de uso
 
 
