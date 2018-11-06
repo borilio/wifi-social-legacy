@@ -65,9 +65,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 	vm.mostrarSelectorIdioma = function (ev) {
 	    $mdDialog.show({
 	            controller: vm.DialogController,
-	            locals: {
-	                m: vm.m
-	            },
+	            locals: {m: vm.m},
 	            templateUrl: 'templates/multi.tmpl.html',
 	            parent: angular.element(document.body),
 	            targetEvent: ev,
@@ -78,7 +76,12 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 	            vm.idioma = answer;
 	            //Rellenamos el objeto m con los atributos del JSON seleccionado
 	            vm.cargarIdioma(vm.idioma);
-	            //El toast lo mostramos en cargarIdioma(), ya que si no al ser asincrono, es posible que
+	            //Como ha cambiado de idioma, "reseteamos" el estado de las condiciones para que vuelva a aceptar
+                vm.condiciones = false;
+                $scope.status = "";
+
+
+                //El toast lo mostramos en cargarIdioma(), ya que si no al ser asincrono, es posible que
 	            //cuando termine cargarIdioma() todavía vm.m.langChange valga todavía lo anterior y no salía bien el mensaje
 
 	        }, function () { //Canceló la ventana sin aceptar o declinar
