@@ -171,7 +171,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     /******************************************************************************************/
 
     //Configuración básica
-    vm.empresa = "Nombre empresa";
+    vm.empresa = "Help";
     vm.copyright = "GoBo Technologies";
     vm.descripcion = vm.empresa;
     vm.numeroVersion = "2.0";
