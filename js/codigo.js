@@ -186,7 +186,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.user="";                 //Usuario y contraseña por defecto que sale en el form
     vm.pass="";
     vm.condiciones = false;     //Indica si están aceptadas o no las condiciones
-    vm.fabOpen = false;         //Indica si el speeddial está abierto o no
+    vm.fabOpen = false;         //Indica si el speeddial está abierto o no (aunque no se usa porque no funcionaba)
     $scope.status = "";         //Es el texto que sale tras aceptar o rechazar las condiciones de uso
 
 
