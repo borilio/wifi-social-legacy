@@ -82,7 +82,7 @@
                     </md-button>
                 </md-fab-trigger>
 
-                <md-fab-actions ng-show="false">
+                <md-fab-actions>
                     <!--Botones flotantes -->
                     <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
                         <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
@@ -194,8 +194,7 @@
     <footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie">
         <div class="container">
             <!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
-<!--            <span class="lead text-truncate">{{vm.descripcion}}</span>-->
-            <span class="lead text-truncate">Demo Enterprise</span>
+            <span class="lead text-truncate">{{vm.descripcion}}</span>
             
             <!-- Trozo copyright-->
             <span class="text-center">

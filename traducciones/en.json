@@ -38,8 +38,11 @@
 
     "_ayuda" : "Parte para la página de ayuda",
     "hAyuda" : "Help",
-    "hHeader": "Help text",
-    "hPar1"  : "Content of help for bastard and motherfuckers",
+    "hHeader": "Follow the steps ...",
+    "hPaso"  : "Step",
+    "hPar1"  : "In order to use our WIFI service, you must first read the conditions of use, for this you will have to press the 'USE OF SERVICE' button as shown in the image.",
+    "hPar2"  : "A window will open with the terms of use of the service, which you can accept if you agree, or reject otherwise, you will find the buttons at the end of the terms and conditions, as shown in the image. Remember that if you do not accept the conditions you will not be able to use the service.",
+    "hPar3"  : "Once accepted the conditions of use, you can already enter the username and password provided by the establishment, and then you can click on 'ENTER'.",
 
 
     "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."

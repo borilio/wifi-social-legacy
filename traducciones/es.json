@@ -38,8 +38,11 @@
 
     "_ayuda" : "Parte para la página de ayuda",
     "hAyuda" : "Ayuda",
-    "hHeader": "Texto de ayuda",
-    "hPar1"  : "Contenido de la ayuda para el párrafo1",
+    "hHeader": "Siga los pasos...",
+    "hPaso"  : "Paso",
+    "hPar1"  : "Para poder usar nuestro servicio de WIFI, deberá primero leer las condiciones de uso, para ello tendrá que pulsar el botón de 'USO DEL SERVICIO' tal y como se muestra en la imagen.",
+    "hPar2"  : "Se abrirá una ventana con las condiciones de uso del servicio, las cuales puede aceptar si está de acuerdo, o rechazar en caso contrario. Los botones los encontrará al final de los términos y condiciones, como se muestra en la imagen. Recuerde que si no acepta las condiciones no podrá usar el servicio.",
+    "hPar3"  : "Una vez aceptadas las condiciones de uso, ya podrá introducir el nombre de usuario y contraseña proporcionadas por el establecimiento, y a continuación puede pulsar en 'ENTRAR'.",
 
 
     "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
