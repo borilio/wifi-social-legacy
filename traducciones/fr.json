@@ -44,6 +44,8 @@
     "hPar2"  : "Une fenêtre s'ouvrira avec les conditions d'utilisation du service, que vous pourrez accepter si vous êtes d'accord ou refusez autrement, vous trouverez les boutons à la fin des conditions d'utilisation, comme indiqué dans l'image. N'oubliez pas que si vous n'acceptez pas les conditions, vous ne pourrez pas utiliser le service.",
     "hPar3"  : "Une fois acceptées les conditions d'utilisation, vous pouvez déjà saisir le nom d'utilisateur et le mot de passe fournis par l'établissement, puis vous pouvez cliquer sur 'ENTRER'.",
 
+    "_cortesia" : "Parte para internet de cortesía",
+    "cMensaje" : "Pour avoir un accès Internet gratuit, cliquez sur le bouton suivant.",
 
     "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
 }

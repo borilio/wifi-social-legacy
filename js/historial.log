@@ -47,6 +47,10 @@ Versión 2.0 (18/10/2018)
 -Cambios estéticos en como se muestra el estado de la aceptación (status). Ahora se muestra en un alert en lugar de un badge.
 -Creado un speeddial (botón de más opciones donde ya se muestran los demás botones en la barra)
 
+Versión 2.01 (14/05/2019)
+================================================
+-Mejorado el enlace para obtener internet de cortesía (aspecto y traducción). Se ha puesto en la parte del formulario.
+-Si cortesía está activado, oculta las condiciones de uso y la posibilidad de login.
 
 
 

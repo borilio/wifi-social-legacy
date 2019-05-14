@@ -44,6 +44,9 @@
     "hPar2"  : "Se abrirá una ventana con las condiciones de uso del servicio, las cuales puede aceptar si está de acuerdo, o rechazar en caso contrario. Los botones los encontrará al final de los términos y condiciones, como se muestra en la imagen. Recuerde que si no acepta las condiciones no podrá usar el servicio.",
     "hPar3"  : "Una vez aceptadas las condiciones de uso, ya podrá introducir el nombre de usuario y contraseña proporcionadas por el establecimiento, y a continuación puede pulsar en 'ENTRAR'.",
 
+    "_cortesia" : "Parte para internet de cortesía",
+    "cMensaje" : "Para obtener internet de cortesía gratis, pulsa el siguiente botón",
+
 
     "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
 }

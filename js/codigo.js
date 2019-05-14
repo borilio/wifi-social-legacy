@@ -3,9 +3,6 @@ Autor ExprimeAndroid(c) by Gobo Technologies
 */
 
 
-//TODO: Grabar un video y ponerlo en la ayuda (o capturas, o gif, si es muy grande)
-
-
 angular
 	.module("miModulo", ['ngMaterial', 'ngMessages'])
 	.controller("miControlador", ["$scope", "$mdDialog", "$mdToast", "$http" , mainController])
@@ -174,8 +171,8 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.empresa = "Empresa Demo";
     vm.copyright = "GoBo Technologies";
     vm.descripcion = vm.empresa;
-    vm.numeroVersion = "2.0";
-    vm.nombreVersion = "G ML";
+    vm.numeroVersion = "2.01";
+    vm.nombreVersion = "Q";
 
     //Seleccionamos español por defecto
     vm.idioma = "es";
