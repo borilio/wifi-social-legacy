@@ -173,7 +173,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.descripcion = vm.empresa;
     vm.numeroVersion = "2.01";
     vm.nombreVersion = "Q";
-    vm.trial = false;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login
+    vm.trial = true;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login
 
     //Seleccionamos español por defecto
     vm.idioma = "es";

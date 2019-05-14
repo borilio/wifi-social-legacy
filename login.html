@@ -132,7 +132,7 @@
                     <!-- Contenido de la tarjeta -->
 	                <md-card-content>
 						<!-- $(if trial == 'no') -->
-                        <div layout="column" layout-align="center">
+                        <div layout="column" layout-align="center" ng-show="vm.trial===false">
 
 							<!-- Botón de condiciones y status -->
 							<md-button class="md-raised md-primary text-truncate" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
@@ -174,7 +174,7 @@
 
                         <!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
 <!--				        $(if trial == 'yes')-->
-                        <div layout="column" layout-align="center" ng-show="vm.trial ===true">
+                        <div layout="column" layout-align="center" ng-show="vm.trial===true">
                             <div id="trial">
                                 <p class="alert alert-info text-center">{{vm.m.cMensaje}}
                                     <a class="btn btn-info btn-lg" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
