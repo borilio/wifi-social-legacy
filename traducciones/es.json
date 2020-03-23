@@ -14,6 +14,8 @@
 
     "_formulario": "Parte del formulario",
     "formParrafo": "Ahora ya puede usar el usuario y contraseña proporcionado por el establecimiento",
+    "formParrafoTrial": "Ahora puede usar nuestro internet de cortesía pulsando ENTRAR",
+
     "formUser": "Usuario",
     "formPass": "Contraseña",
     "formUso": "Uso del servicio",
@@ -45,7 +47,7 @@
     "hPar3"  : "Una vez aceptadas las condiciones de uso, ya podrá introducir el nombre de usuario y contraseña proporcionadas por el establecimiento, y a continuación puede pulsar en 'ENTRAR'.",
 
     "_cortesia" : "Parte para internet de cortesía",
-    "cMensaje" : "Para obtener internet de cortesía gratis, pulsa el siguiente botón",
+    "cMensaje" : "Wifi de cortesía Activado. Este mensaje no aparece en la versión final",
 
 
     "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."

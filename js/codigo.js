@@ -171,8 +171,8 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.empresa = "Empresa Demo";
     vm.copyright = "GoBo Technologies";
     vm.descripcion = vm.empresa;
-    vm.numeroVersion = "2.01";
-    vm.nombreVersion = "Q";
+    vm.numeroVersion = "2.02";
+    vm.nombreVersion = "P";
     vm.trial = false;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login
 
     //Seleccionamos español por defecto

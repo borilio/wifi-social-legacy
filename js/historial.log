@@ -52,7 +52,11 @@ Versión 2.01 (14/05/2019)
 -Mejorado el enlace para obtener internet de cortesía (aspecto y traducción). Se ha puesto en la parte del formulario.
 -Si cortesía está activado, oculta las condiciones de uso y la posibilidad de login.
 
-
+Versión 2.02 (23/03/2020)
+================================================
+-Cambios en la forma de obtener wifi de cortesía. Si cortesía está activado, no se oculta las condiciones de uso, pero si la 
+ posibilidad de login.
+ 
 
 
 

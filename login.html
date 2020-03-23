@@ -132,7 +132,7 @@
                     <!-- Contenido de la tarjeta -->
 	                <md-card-content>
 						<!-- $(if trial == 'no') -->
-                        <div layout="column" layout-align="center" ng-show="vm.trial===false">
+                        <div layout="column" layout-align="center">
 
 							<!-- Botón de condiciones y status -->
 							<md-button class="md-raised md-primary text-truncate" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
@@ -144,13 +144,14 @@
 								<div ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
 								    <span><strong>{{status}}</strong></span>
 								    <div ng-show="vm.condiciones===true">
-								        <span class="small">{{vm.m.formParrafo}}</span>
+								        <span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
+								        <span class="small" ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
 								    </div>
 							    </div>
                             </div>
 
 							<!-- Usuario y contraseña -->
-							<div ng-show="vm.condiciones==true">
+							<div ng-show="vm.condiciones==true && vm.trial===false">
 
 								<md-input-container class="md-block">
 									<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
@@ -174,12 +175,9 @@
 
                         <!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
 <!--				        $(if trial == 'yes')-->
-                        <div layout="column" layout-align="center" ng-show="vm.trial===true">
-                            <div id="trial">
+                        <div layout="column" layout-align="center" >
+						    <div id="trial" ng-show="vm.trial===true">
                                 <p class="alert alert-info text-center">{{vm.m.cMensaje}}
-                                    <a class="btn btn-info btn-lg" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
-                                        <md-icon aria-label="wifi" md-svg-src="img/baseline-wifi-24px.svg"></md-icon>
-                                    </a>
                                 </p>
 						    </div>
 <!--
