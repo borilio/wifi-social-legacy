@@ -40,7 +40,7 @@
 
 </head>
 
-<body id="body-pagina" class='login' >
+<body class='login' >
 
 
 <!--	$(if chap-id)-->
@@ -131,7 +131,7 @@
 
                     <!-- Contenido de la tarjeta -->
 	                <md-card-content>
-						<!-- $(if trial == 'no') -->
+
                         <div layout="column" layout-align="center">
 
 							<!-- Botón de condiciones y status -->
@@ -144,13 +144,18 @@
 								<div ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
 								    <span><strong>{{status}}</strong></span>
 								    <div ng-show="vm.condiciones===true">
+<!--                        $(if trial == 'no') -->
 								        <span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
+<!--                        $(endif)-->
+<!--                        $(if trial == 'yes') -->
 								        <span class="small" ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
+<!--                        $(endif)-->
 								    </div>
 							    </div>
                             </div>
 
 							<!-- Usuario y contraseña -->
+<!--                        $(if trial == 'no') -->
 							<div ng-show="vm.condiciones==true && vm.trial===false">
 
 								<md-input-container class="md-block">
@@ -164,14 +169,15 @@
 									<input autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
 								</md-input-container>
 							</div>
+<!--                        $(endif)-->
 							
+
 							<!-- Botón de entrar -->
 							<md-button ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
 								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 							</md-button>
 						</div>
-<!--                        $(endif)-->
 
                         <!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
 <!--				        $(if trial == 'yes')-->
@@ -207,12 +213,12 @@
     <footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie">
         <div class="container">
             <!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
-            <span class="lead text-truncate">{{vm.descripcion}}</span>
+            <span ng-show="false" class="lead text-truncate">{{vm.descripcion}}</span>
             
             <!-- Trozo copyright-->
             <span class="text-center">
                 <md-icon aria-label="copyright" class="text-light" md-svg-src="img/baseline-copyright-24px.svg"></md-icon>    
-                {{vm.copyright}}
+                <a href="{{vm.enlaceCopyright}}">{{vm.copyright}}</a>
             </span>
 
             <!-- Trozo versión-->

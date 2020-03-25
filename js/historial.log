@@ -57,6 +57,13 @@ Versión 2.02 (23/03/2020)
 -Cambios en la forma de obtener wifi de cortesía. Si cortesía está activado, no se oculta las condiciones de uso, pero si la 
  posibilidad de login.
  
+Versión 2.03 (25/03/2020)
+================================================
+- Arreglado bug de la versión anterior.
+- Arreglado frase en francés que no estaba bien corregido.
+- Arreglado bug de visualización en el color de fondo de la página.
+- Cambios en el footer. Eliminado nombre de la empresa y añadido enlace de contacto en el Copyright.
+
 
 
 

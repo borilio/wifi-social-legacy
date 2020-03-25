@@ -170,6 +170,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     //Configuración básica
     vm.empresa = "Empresa Demo";
     vm.copyright = "GoBo Technologies";
+    vm.enlaceCopyright = "mailto:gobotecno@gmail.com"; //Enlace al que llevará el copyright
     vm.descripcion = vm.empresa;
     vm.numeroVersion = "2.02";
     vm.nombreVersion = "P";

@@ -4,7 +4,7 @@
     background-color: #151515;
 }
 
-#body-pagina {
+html, body {
   background-color: grey;  
 }
 
