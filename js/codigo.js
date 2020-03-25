@@ -172,7 +172,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.copyright = "GoBo Technologies";
     vm.enlaceCopyright = "mailto:gobotecno@gmail.com"; //Enlace al que llevará el copyright
     vm.descripcion = vm.empresa;
-    vm.numeroVersion = "2.02";
+    vm.numeroVersion = "2.03";
     vm.nombreVersion = "P";
     vm.trial = false;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login
 
