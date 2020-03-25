@@ -174,7 +174,12 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.descripcion = vm.empresa;
     vm.numeroVersion = "2.03";
     vm.nombreVersion = "P";
-    vm.trial = false;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login
+    /**
+    vm.trial sólo sirve para poder probar como saldrían las cosas teniendo activada la trial o no. Ya que ésta variable se debe cambiar
+    a mano. Hay que usar unos if(trial=yes) en el html que el mikrotik si los interpreta, pero que fuera de él hay que ponerle comentarios
+    para no enguarrarlo.
+    */
+    vm.trial = false;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login.
 
     //Seleccionamos español por defecto
     vm.idioma = "es";

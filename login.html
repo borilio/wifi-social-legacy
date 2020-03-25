@@ -169,14 +169,21 @@
 									<input autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
 								</md-input-container>
 							</div>
-<!--                        $(endif)-->
-							
+
 
 							<!-- Botón de entrar -->
-							<md-button ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
+							<md-button ng-show="vm.trial === false" ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
 								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 							</md-button>
+<!--                        $(endif)-->
+<!--                        $(if trial == 'yes') -->
+							<md-button ng-show="vm.trial === true" class="md-raised md-primary" ng-disabled="vm.condiciones === false" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
+								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
+                            </md-button>
+<!--                        $(endif)-->
+
 						</div>
 
                         <!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->

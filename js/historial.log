@@ -59,10 +59,11 @@ Versión 2.02 (23/03/2020)
  
 Versión 2.03 (25/03/2020)
 ================================================
-- Arreglado bug de la versión anterior.
+- Arreglado bug de la versión anterior que hacía que no mostrara ningún control.
 - Arreglado frase en francés que no estaba bien corregido.
 - Arreglado bug de visualización en el color de fondo de la página.
 - Cambios en el footer. Eliminado nombre de la empresa y añadido enlace de contacto en el Copyright.
+- Eliminados los ng-show de vm.trial ya que esa variable no cambia nunca y en el mikrotik produce errores.
 
 
 
