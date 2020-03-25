@@ -43,7 +43,7 @@
 <body class='login' >
 
 
-<!--	$(if chap-id)-->
+	$(if chap-id)
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
@@ -61,7 +61,7 @@
 			return false;
 		}
 	</script>
-<!--	$(endif)-->
+	$(endif)
 
 
 	<md-toolbar class="md-hue-1 flex" id="barra">
@@ -144,19 +144,19 @@
 								<div ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
 								    <span><strong>{{status}}</strong></span>
 								    <div ng-show="vm.condiciones===true">
-<!--                        $(if trial == 'no') -->
-								        <span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
-<!--                        $(endif)-->
-<!--                        $(if trial == 'yes') -->
-								        <span class="small" ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
-<!--                        $(endif)-->
+                        $(if trial == 'no') 
+								        <span class="small" >{{vm.m.formParrafo}}</span>
+                        $(endif)
+                        $(if trial == 'yes')
+								        <span class="small">{{vm.m.formParrafoTrial}}</span>
+                        $(endif)
 								    </div>
 							    </div>
                             </div>
 
 							<!-- Usuario y contraseña -->
-<!--                        $(if trial == 'no') -->
-							<div ng-show="vm.condiciones==true && vm.trial===false">
+                        $(if trial == 'no') 
+							<div ng-show="vm.condiciones==true">
 
 								<md-input-container class="md-block">
 									<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
@@ -172,35 +172,35 @@
 
 
 							<!-- Botón de entrar -->
-							<md-button ng-show="vm.trial === false" ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
+							<md-button  ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
 								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 							</md-button>
-<!--                        $(endif)-->
-<!--                        $(if trial == 'yes') -->
-							<md-button ng-show="vm.trial === true" class="md-raised md-primary" ng-disabled="vm.condiciones === false" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+                        $(endif)
+                        $(if trial == 'yes')
+							<md-button class="md-raised md-primary" ng-disabled="vm.condiciones === false" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
 								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
 								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
                             </md-button>
-<!--                        $(endif)-->
+                        $(endif)
 
 						</div>
 
                         <!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
-<!--				        $(if trial == 'yes')-->
+				        $(if trial == 'yes')
                         <div layout="column" layout-align="center" >
-						    <div id="trial" ng-show="vm.trial===true">
+						    <div id="trial" ng-show="false">
                                 <p class="alert alert-info text-center">{{vm.m.cMensaje}}
                                 </p>
 						    </div>
-<!--
+
                             $(endif)
                             $(if error)
--->
+
                             <div id="error">
                                 <p class="alert alert-danger text-center">$(error)</p>
                             </div>
-<!--                        $(endif)-->
+                        $(endif)
                         </div>
 
 					</md-card-content>
