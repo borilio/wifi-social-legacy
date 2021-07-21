@@ -9,14 +9,21 @@ https://github.com/borilio/wifi-social
 ## Vista previa última versión GitHub
 
 Para acceder al enlace de GitHub y ver la última versión del repositorio, visite:
+
 https://borilio.github.io/wifi-social-legacy/
 
 ## Releases
 
-Para crear una release, hay que eliminar el archivo `index.html` y eliminar los comentarios del html y dejar al 'aire' 
-todas las variables del mikrotik. 
+Para crear una release, se crea una rama con el nombre `release-YYYY-MM-DD` y en esa rama se edita el archivo ``login.html``, quitando todos los comentarios de las variables del mikrotik (desmikrotizar).
 
-### Ejemplo
+El último release lo encontrará en:
+https://github.com/borilio/wifi-social-legacy/releases/latest
+
+Las releases más antiguas se encuentran en:
+https://github.com/borilio/wifi-social-legacy/releases
+
+
+### Ejemplo de desmikrotización (eliminar comentarios $())
 
 Cambiar esto:
 

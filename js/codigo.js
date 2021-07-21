@@ -1,5 +1,6 @@
 /*
 Autor ExprimeAndroid(c) by Gobo Technologies
+Para editar alguna configuración, como el nombre de la empresa, ve al final del archivo
 */
 
 
