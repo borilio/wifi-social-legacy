@@ -66,7 +66,10 @@ Versión 2.03 (25/03/2020)
 - Cambios en el footer. Eliminado nombre de la empresa y añadido enlace de contacto en el Copyright.
 - Eliminados los ng-show de vm.trial ya que esa variable no cambia nunca y en el mikrotik produce errores.
 
-
-
-
+Versión 2.04 (20/07/2021)
+================================================
+- Se oculta el footer cuando se aceptan las condiciones de uso 
+- Se añade un degradado en el fondo 
+- Se añade más margen desde el final de la página hasta footer
+- Se cambia todo el aspecto de la tarjeta principal. Siendo ahora un div transparente y con un fondo de color azul.
 

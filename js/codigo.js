@@ -170,10 +170,10 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     //Configuración básica
     vm.empresa = "Empresa Demo";
     vm.copyright = "GoBo Technologies";
-    vm.enlaceCopyright = "mailto:gobotecno@gmail.com"; //Enlace al que llevará el copyright
     vm.descripcion = vm.empresa;
-    vm.numeroVersion = "2.03";
-    vm.nombreVersion = "P";
+    vm.numeroVersion = "2.04";
+    vm.nombreVersion = "B";
+    vm.enlaceCopyright = "mailto:gobotecno@gmail.com?subject=WifiSocial&body=From " + vm.empresa + " (" + vm.numeroVersion + vm.nombreVersion + ")" ; //Enlace al que llevará el copyright
     /**
     vm.trial sólo sirve para poder probar como saldrían las cosas teniendo activada la trial o no. Ya que ésta variable se debe cambiar
     a mano. Hay que usar unos if(trial=yes) en el html que el mikrotik si los interpreta, pero que fuera de él hay que ponerle comentarios
@@ -195,3 +195,4 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 
 
 } //Fin mainController
+

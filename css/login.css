@@ -1,11 +1,14 @@
 /******************************************/
 /* Personalizaciones */
 #barra {
-    background-color: #151515;
+    background: rgb(21,21,21);
+	background: linear-gradient(284deg, rgba(21,21,21,1) 0%, rgba(37,37,37,1) 49%, rgba(57,57,57,1) 73%, rgba(91,86,86,1) 100%);
 }
 
 html, body {
-  background-color: grey;  
+	background: #a2a09b;
+	background: linear-gradient(135deg, hsla(236.6, 0%, 53.52%, 1) 0, hsla(236.6, 0%, 53.52%, 0) 70%), linear-gradient(25deg, hsla(220.75, 34.93%, 26.52%, 1) 10%, hsla(220.75, 34.93%, 26.52%, 0) 80%), linear-gradient(315deg, hsla(46.42, 36.62%, 83.92%, 1) 15%, hsla(46.42, 36.62%, 83.92%, 0) 80%), linear-gradient(245deg, hsla(191.32, 50.68%, 56.45%, 1) 100%, hsla(191.32, 50.68%, 56.45%, 0) 70%);
+	background-attachment: fixed;
 }
 
 .btn-refresh {
@@ -15,11 +18,12 @@ html, body {
 }
 
 .tarjeta {
-    -webkit-box-shadow: 7px 9px 17px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 7px 9px 17px -4px rgba(0, 0, 0, 0.75);
-    box-shadow: 7px 9px 17px -4px rgba(0, 0, 0, 0.75);
     margin-top: 30px;
     margin-bottom: 100px;
+}
+
+.sombra {
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 .centrado {
@@ -34,6 +38,13 @@ html, body {
     z-index: 0;
 }
 
+.hueco {
+	margin-top: 15rem;
+}
+
+.btn-form {
+	background-color: #3e4d59;
+}
 
 /*Botón de selección de idioma*/
 .btn-idioma {
@@ -107,7 +118,6 @@ ul.notice li {
 }
 
 .vertical-form {
-    background-color: grey;
     margin: 0 auto;
 }
 

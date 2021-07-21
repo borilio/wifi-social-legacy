@@ -3,12 +3,12 @@
 
 <head>
 	<title>{{vm.m.title}}</title>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="theme-color" content="#151515"/>
+	<meta name="theme-color" content="#151515" />
 	<meta http-equiv="expires" content="-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="img/wifi.ico"/>
+	<link rel="shortcut icon" href="img/wifi.ico" />
 
 	<!-- ExprimeAndroid -->
 	<!--Jquery y Bootstrap-->
@@ -27,11 +27,11 @@
 	<script src="libreria/angular/angular-material.min.js"></script>
 	<link rel="stylesheet" href="libreria/css/angular-material.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" />
 	<!--Lista completa de iconos en https://www.google.com/design/icons/-->
 
 	<!-- FontAwesome -->
-	<link rel="stylesheet" href="libreria/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="libreria/css/font-awesome.min.css" />
 
 	<!--Archivos propios-->
 	<script src="js/codigo.js" type="text/javascript"></script>
@@ -40,10 +40,10 @@
 
 </head>
 
-<body class='login' >
+<body class='login'>
 
 
-<!--	$(if chap-id)-->
+	<!--	$(if chap-id)-->
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
@@ -61,191 +61,245 @@
 			return false;
 		}
 	</script>
-<!--	$(endif)-->
+	<!--	$(endif)-->
 
 
 	<md-toolbar class="md-hue-1 flex" id="barra">
 		<div class="md-toolbar-tools">
-            <!-- Botón invisible por ahora -->
+			<!-- Botón invisible por ahora -->
 			<md-button ng-disabled="true" ng-show="false" class="md-icon-button">
 				<md-icon aria-label="Menu" md-svg-src="img/baseline-menu-24px.svg"></md-icon>
 			</md-button>
-            <h3>{{vm.m.menuBar}}</h3>
+			<h3>{{vm.m.menuBar}}</h3>
 
-            <!-- Esto rellena el hueco hasta el final -->
-            <span flex></span>
-            <!-- Botón fab-dial -->
-            <md-fab-speed-dial md-direction="left" class="md-fling md-full-hover" md-open="false">
-                <md-fab-trigger>
-                    <md-button aria-label="more" class="md-fab md-mini">
-                        <md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
-                    </md-button>
-                </md-fab-trigger>
+			<!-- Esto rellena el hueco hasta el final -->
+			<span flex></span>
+			<!-- Botón fab-dial -->
+			<md-fab-speed-dial md-direction="left" class="md-fling md-full-hover" md-open="false">
+				<md-fab-trigger>
+					<md-button aria-label="more" class="md-fab md-mini">
+						<md-icon aria-label="more" md-svg-src="img/baseline-more_vert-24px.svg"></md-icon>
+					</md-button>
+				</md-fab-trigger>
 
-                <md-fab-actions>
-                    <!--Botones flotantes -->
-                    <md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)" aria-label="Ayuda">
-                        <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
-                        <md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
-                    </md-button>
-                    <md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
-                        <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
-                        <md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
-                    </md-button>
-                    <md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)" aria-label="Idioma">
-                        <md-tooltip md-direction="down" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
-                        <md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
-                    </md-button>
-                </md-fab-actions>
-            </md-fab-speed-dial>
-        </div>
+				<md-fab-actions>
+					<!--Botones flotantes -->
+					<md-button class="md-fab md-mini md-secondary" ng-click="vm.mostrarAyuda($event)"
+						aria-label="Ayuda">
+						<md-tooltip md-direction="down" md-delay="700">{{vm.m.tipAyuda}}</md-tooltip>
+						<md-icon aria-label="Idioma" md-svg-src="img/baseline-help-24px.svg"></md-icon>
+					</md-button>
+					<md-button class="md-fab md-mini md-primary btn-refresh" ng-click="vm.restart()" aria-label="Reset">
+						<md-tooltip md-direction="down" md-delay="700">{{vm.m.tipReset}}</md-tooltip>
+						<md-icon aria-label="Reset" md-svg-src="img/ic_refresh_white_24px.svg"></md-icon>
+					</md-button>
+					<md-button class="md-fab md-mini md-primary" ng-click="vm.mostrarSelectorIdioma($event)"
+						aria-label="Idioma">
+						<md-tooltip md-direction="down" md-delay="700">{{vm.m.tipIdioma}}</md-tooltip>
+						<md-icon aria-label="Idioma" md-svg-src="img/baseline-language-24px.svg"></md-icon>
+					</md-button>
+				</md-fab-actions>
+			</md-fab-speed-dial>
+		</div>
 	</md-toolbar>
 
+	<div id="contenido" class="container">
+
+		<form class="vertical-form" name="login" action="$(link-login-only)" method="post" $(if chap-id)
+			onSubmit="return doLogin()" $(endif)>
+			<input type="hidden" name="dst" value="$(link-orig)" />
+			<input type="hidden" name="popup" value="true" />
 
 
-	<form class="vertical-form" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
-		<input type="hidden" name="dst" value="$(link-orig)" />
-		<input type="hidden" name="popup" value="true" />
+			<!-- Empieza la mandanga -->
+			<div>
+				<div class="container">
 
-        <!-- Empieza la mandanga -->
-		<div>
-			<div class="container">
+					<div id="form" class="tarjeta">
+						<!-- Título y subtitulo de la tarjeta (vacíos por ahora...) -->
+						<md-card-title>
+							<md-card-title-text>
+								<span class="md-headline"></span>
+								<span class="md-subhead"></span>
+							</md-card-title-text>
+						</md-card-title>
 
-                <md-card id="form" class="tarjeta">
-					<!-- Título y subtitulo de la tarjeta (vacíos por ahora...) -->
-					<md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline"></span>
-                            <span class="md-subhead"></span>
-                        </md-card-title-text>
-                    </md-card-title>
-
-                    <!-- Logo -->
-                    <div class="row">
-					    <div class="col"></div>
-					    <div class="col-8 centrado logo">
-					        <img src="img/logo.png" class="md-card-image img-fluid" alt="Logo">    
-					    </div>
-					    <div class="col"></div>
-					</div>
-
-                    <!-- Contenido de la tarjeta -->
-	                <md-card-content>
-
-                        <div layout="column" layout-align="center">
-
-							<!-- Botón de condiciones y status -->
-							<md-button class="md-raised md-primary text-truncate" ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
-								<md-tooltip md-direction="top" md-delay="700">{{vm.m.tipUsoServicio}}</md-tooltip>
-								<md-icon class="text-info" aria-label="ver-condiciones" md-svg-src="img/baseline-info-24px.svg"></md-icon>
-								<span>{{vm.m.formUso}}</span>
-							</md-button>
-							<div ng-show="status!=''" class="text-center">
-								<div ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
-								    <span><strong>{{status}}</strong></span>
-								    <div ng-show="vm.condiciones===true">
-<!--                        $(if trial == 'no') -->
-								        <span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
-<!--                        $(endif)-->
-<!--                        $(if trial == 'yes') -->
-								        <span class="small" ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
-<!--                        $(endif)-->
-								    </div>
-							    </div>
-                            </div>
-
-							<!-- Usuario y contraseña -->
-<!--                        $(if trial == 'no') -->
-							<div ng-show="vm.condiciones==true && vm.trial===false">
-
-								<md-input-container class="md-block">
-									<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
-									<label>{{vm.m.formUser}}</label>
-									<input name="username" type="text" value="" ng-model="vm.user" size="30" />
-								</md-input-container>
-								<md-input-container class="md-block">
-									<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg"></md-icon>
-									<label>{{vm.m.formPass}}</label>
-									<input autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
-								</md-input-container>
+						<!-- Logo -->
+						<div class="row">
+							<div class="col"></div>
+							<div class="col-8 centrado logo">
+								<img src="img/logo.png" class="md-card-image img-fluid" alt="Logo">
 							</div>
-
-
-							<!-- Botón de entrar -->
-							<md-button ng-show="vm.trial === false" ng-disabled="vm.condiciones === false" type="submit" class="md-raised md-primary">
-								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
-								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
-							</md-button>
-<!--                        $(endif)-->
-<!--                        $(if trial == 'yes') -->
-							<md-button ng-show="vm.trial === true" class="md-raised md-primary" ng-disabled="vm.condiciones === false" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
-								<span ng-show="vm.condiciones === false"><md-icon class="text-danger" aria-label="Entrar" md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
-								<span ng-show="vm.condiciones === true"><md-icon class="text-success" aria-label="Entrar" md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>{{vm.m.formEntrar}}</span>
-                            </md-button>
-<!--                        $(endif)-->
-
+							<div class="col"></div>
 						</div>
 
-                        <!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
-<!--				        $(if trial == 'yes')-->
-                        <div layout="column" layout-align="center" >
-						    <div id="trial" ng-show="vm.trial===true">
-                                <p class="alert alert-info text-center">{{vm.m.cMensaje}}
-                                </p>
-						    </div>
-<!--
+						<!-- Contenido de la tarjeta -->
+						<md-card-content>
+
+							<div layout="column" layout-align="center">
+
+								<!-- Botón de condiciones y status -->
+								<md-button class="md-raised text-truncate text-light" style="background-color: #3e4d59;" 
+									ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
+									<md-tooltip md-direction="top" md-delay="700">{{vm.m.tipUsoServicio}}</md-tooltip>
+									<md-icon class="text-info" aria-label="ver-condiciones"
+										md-svg-src="img/baseline-info-24px.svg"></md-icon>
+									<span>{{vm.m.formUso}}</span>
+								</md-button>
+								<div ng-show="status!=''" class="text-center">
+									<div
+										ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
+										<span><strong>{{status}}</strong></span>
+										<div ng-show="vm.condiciones===true">
+											<!--                        $(if trial == 'no') -->
+											<span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
+											<!--                        $(endif)-->
+											<!--                        $(if trial == 'yes') -->
+											<span class="small"
+												ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
+											<!--                        $(endif)-->
+										</div>
+									</div>
+								</div>
+
+								<!-- Usuario y contraseña -->
+								<!--                        $(if trial == 'no') -->
+								<div ng-show="vm.condiciones==true && vm.trial===false">
+
+									<div class="input-group mt-5">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
+											</div>
+										</div>
+										<input class="form-control" placeholder="{{vm.m.formUser}}" id="user" name="username" type="text" value="" ng-model="vm.user" size="30" />
+									</div>
+
+									<div class="input-group my-2">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg"></md-icon>
+											</div>
+										</div>
+										<input class="form-control" placeholder="{{vm.m.formPass}}" autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
+									</div>
+
+									<!-- <md-input-container class="md-block">
+										<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg">
+										</md-icon>
+										<label>{{vm.m.formUser}}</label>
+										<input name="username" type="text" value="" ng-model="vm.user" size="30" />
+									</md-input-container>
+									<md-input-container class="md-block">
+										<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg">
+										</md-icon>
+										<label>{{vm.m.formPass}}</label>
+										<input autocomplete="off" name="password" type="password" ng-model="vm.pass"
+											label="false" size="20" />
+									</md-input-container> -->
+								</div>
+
+
+								<!-- Botón de entrar -->
+								<md-button ng-show="vm.trial === false" ng-disabled="vm.condiciones === false"
+									type="submit" class="md-raised md-primary text-light" style="background-color: #3e4d59;" >
+									<span ng-show="vm.condiciones === false">
+										<md-icon class="text-danger" aria-label="Entrar"
+											md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}
+									</span>
+									<span ng-show="vm.condiciones === true">
+										<md-icon class="text-success" aria-label="Entrar"
+											md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>
+										{{vm.m.formEntrar}}
+									</span>
+								</md-button>
+								<!--                        $(endif)-->
+								<!--                        $(if trial == 'yes') -->
+								<md-button ng-show="vm.trial === true" class="md-raised md-primary text-light"
+									ng-disabled="vm.condiciones === false" style="background-color: #3e4d59;"
+									href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+									<span ng-show="vm.condiciones === false">
+										<md-icon class="text-danger" aria-label="Entrar"
+											md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}
+									</span>
+									<span ng-show="vm.condiciones === true">
+										<md-icon class="text-success" aria-label="Entrar"
+											md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>
+										{{vm.m.formEntrar}}
+									</span>
+								</md-button>
+								<!--                        $(endif)-->
+
+							</div>
+
+							<!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
+							<!--				        $(if trial == 'yes')-->
+							<div layout="column" layout-align="center">
+								<div id="trial" ng-show="vm.trial===true">
+									<p class="alert alert-info text-center">{{vm.m.cMensaje}}
+									</p>
+								</div>
+								<!--
                             $(endif)
                             $(if error)
 -->
-                            <div id="error">
-                                <p class="alert alert-danger text-center">$(error)</p>
-                            </div>
-<!--                        $(endif)-->
-                        </div>
+								<div id="error">
+									<p class="alert alert-danger text-center">$(error)</p>
+								</div>
+								<!--                        $(endif)-->
+							</div>
 
-					</md-card-content>
-					<md-card-actions>
-						<!--Espacio para las acciones de la tarjeta-->
+						</md-card-content>
+						<md-card-actions>
+							<!--Espacio para las acciones de la tarjeta-->
 
-				    </md-card-actions>
-				</md-card>
+						</md-card-actions>
+					</div>
 
+				</div>
 			</div>
+
+
+		</form>
+
+	</div>
+
+	<div class="hueco">
+		<hr>		
+	</div>
+
+	<footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie" ng-show="vm.condiciones==false">
+		<div class="container">
+			<!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
+			<span ng-show="false" class="lead text-truncate">{{vm.descripcion}}</span>
+
+			<!-- Trozo copyright-->
+			<span class="text-center">
+				<md-icon aria-label="copyright" class="text-light" md-svg-src="img/baseline-copyright-24px.svg">
+				</md-icon>
+				<a href="{{vm.enlaceCopyright}}">{{vm.copyright}}</a>
+			</span>
+
+			<!-- Trozo versión-->
+			<span class="small text-right">
+				<md-icon aria-label="code" class="text-light" md-svg-src="img/baseline-code-24px.svg"></md-icon>
+				v.{{vm.numeroVersion}}-{{vm.nombreVersion}}
+			</span>
+
+			<!-- Trozo Idioma-->
+			<span>
+				<md-button class="md-primary" ng-click="vm.mostrarSelectorIdioma($event)">{{vm.m.desc}}</md-button>
+			</span>
 		</div>
+	</footer>
 
-       
-	</form>
-	
-	
-    <footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie">
-        <div class="container">
-            <!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
-            <span ng-show="false" class="lead text-truncate">{{vm.descripcion}}</span>
-            
-            <!-- Trozo copyright-->
-            <span class="text-center">
-                <md-icon aria-label="copyright" class="text-light" md-svg-src="img/baseline-copyright-24px.svg"></md-icon>    
-                <a href="{{vm.enlaceCopyright}}">{{vm.copyright}}</a>
-            </span>
-
-            <!-- Trozo versión-->
-            <span class="small text-right">
-                <md-icon aria-label="code" class="text-light" md-svg-src="img/baseline-code-24px.svg"></md-icon>
-                v.{{vm.numeroVersion}}-{{vm.nombreVersion}}
-            </span>
-
-            <!-- Trozo Idioma-->
-            <span><md-button class="md-primary" ng-click="vm.mostrarSelectorIdioma($event)">{{vm.m.desc}}</md-button></span>
-        </div>
-    </footer>
-    
 	<script type="text/javascript">
 		//<!--
 		document.login.username.focus();
 		//-->
 	</script>
 	<script type="text/javascript">
-		document.oncontextmenu = function() {
+		document.oncontextmenu = function () {
 			return false;
 		}
 	</script>
