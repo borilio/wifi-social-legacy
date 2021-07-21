@@ -43,7 +43,7 @@
 <body class='login'>
 
 
-	<!--	$(if chap-id)-->
+		<!-- $(if chap-id) -->
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
@@ -61,7 +61,7 @@
 			return false;
 		}
 	</script>
-	<!--	$(endif)-->
+		<!-- $(endif) -->
 
 
 	<md-toolbar class="md-hue-1 flex" id="barra">
@@ -151,19 +151,19 @@
 										ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
 										<span><strong>{{status}}</strong></span>
 										<div ng-show="vm.condiciones===true">
-											<!--                        $(if trial == 'no') -->
+											                       $(if trial == 'no')
 											<span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
-											<!--                        $(endif)-->
-											<!--                        $(if trial == 'yes') -->
+											                       $(endif)
+											                       $(if trial == 'yes')
 											<span class="small"
 												ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
-											<!--                        $(endif)-->
+											                       $(endif)
 										</div>
 									</div>
 								</div>
 
 								<!-- Usuario y contraseña -->
-								<!--                        $(if trial == 'no') -->
+								                       <!-- $(if trial == 'no') -->
 								<div ng-show="vm.condiciones==true && vm.trial===false">
 
 									<div class="input-group mt-5">
@@ -183,20 +183,6 @@
 										</div>
 										<input class="form-control" placeholder="{{vm.m.formPass}}" autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
 									</div>
-
-									<!-- <md-input-container class="md-block">
-										<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg">
-										</md-icon>
-										<label>{{vm.m.formUser}}</label>
-										<input name="username" type="text" value="" ng-model="vm.user" size="30" />
-									</md-input-container>
-									<md-input-container class="md-block">
-										<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg">
-										</md-icon>
-										<label>{{vm.m.formPass}}</label>
-										<input autocomplete="off" name="password" type="password" ng-model="vm.pass"
-											label="false" size="20" />
-									</md-input-container> -->
 								</div>
 
 
@@ -213,8 +199,8 @@
 										{{vm.m.formEntrar}}
 									</span>
 								</md-button>
-								<!--                        $(endif)-->
-								<!--                        $(if trial == 'yes') -->
+								                       <!-- $(endif) -->
+								                       <!-- $(if trial == 'yes') -->
 								<md-button ng-show="vm.trial === true" class="md-raised md-primary text-light"
 									ng-disabled="vm.condiciones === false" style="background-color: #3e4d59;"
 									href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
@@ -228,12 +214,12 @@
 										{{vm.m.formEntrar}}
 									</span>
 								</md-button>
-								<!--                        $(endif)-->
+								                       <!-- $(endif) -->
 
 							</div>
 
 							<!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
-							<!--				        $(if trial == 'yes')-->
+											        <!-- $(if trial == 'yes') -->
 							<div layout="column" layout-align="center">
 								<div id="trial" ng-show="vm.trial===true">
 									<p class="alert alert-info text-center">{{vm.m.cMensaje}}
@@ -246,7 +232,7 @@
 								<div id="error">
 									<p class="alert alert-danger text-center">$(error)</p>
 								</div>
-								<!--                        $(endif)-->
+								                       <!-- $(endif) -->
 							</div>
 
 						</md-card-content>
