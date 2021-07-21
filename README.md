@@ -1,3 +1,6 @@
 # wifi-social
 Login Wifi-Social de Gobo Technologies
-Versión de Multilenguaje
+
+## Vista previa última versión GitHub
+
+borilio.github.io/wifi-social-legacy
