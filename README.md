@@ -1,5 +1,10 @@
-# wifi-social
+# wifi-social-legacy
 Login Wifi-Social de Gobo Technologies
+
+## Versión más nueva
+
+Existe una versión más reciente del proyecto, en fase de pruebas, usando Angular 12 en el siguiente repositorio:
+https://github.com/borilio/wifi-social
 
 ## Vista previa última versión GitHub
 
