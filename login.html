@@ -151,13 +151,13 @@
 										ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
 										<span><strong>{{status}}</strong></span>
 										<div ng-show="vm.condiciones===true">
-											                       $(if trial == 'no')
+											                       <!-- $(if trial == 'no') -->
 											<span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
-											                       $(endif)
-											                       $(if trial == 'yes')
+											                       <!-- $(endif) -->
+											                       <!-- $(if trial == 'yes') -->
 											<span class="small"
 												ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
-											                       $(endif)
+											                       <!-- $(endif) -->
 										</div>
 									</div>
 								</div>
