@@ -14,7 +14,7 @@ https://borilio.github.io/wifi-social-legacy/
 
 ## Releases
 
-Para crear una release, se crea una rama con el nombre `release-YYYY-MM-DD` y en esa rama se edita el archivo ``login.html``, quitando todos los comentarios de las variables del mikrotik (desmikrotizar).
+Para crear una release, se crea una rama con el nombre `release-YYYY-MM-DD`, vamos a la url [releases](https://github.com/borilio/wifi-social-legacy/releases) de este repositorio y seleccionamos la rama nueva creada y hacemos clic en `Draft a new release` (botón a la derecha).
 
 El último release lo encontrará en:
 https://github.com/borilio/wifi-social-legacy/releases/latest
@@ -25,6 +25,6 @@ https://github.com/borilio/wifi-social-legacy/releases
 
 ### Desmikrotización (eliminar comentarios $())
 
-No es necesario poner en comentarios las variables del mikrotik, se pueden dejar comentadas y el mikrotik las leerá igualmente. Y el html las ignorará, por lo que no es necesario desmikrotizar.
+No es necesario poner en comentarios las variables del mikrotik, se pueden dejar comentadas y el mikrotik las leerá igualmente. Y el html las ignorará, por lo que no es necesario desmikrotizar, aunque inicialmente parecía que si.
 
 
