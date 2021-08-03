@@ -186,10 +186,14 @@
 									</div>
 								</div>
 								<!-- $(endif) -->
-								<!-- Botón de entrar. Si es trial tiene un atributo href adicional -->
+								<!-- Botón de entrar. Si es trial tiene un atributo href adicional. Sólo es submit cuando NO es trial -->
 								<md-button class="md-raised md-primary text-truncate" ng-class="{'btn-form pulsame':vm.condiciones}" 
-									ng-disabled="vm.condiciones === false" type="submit"
-									$(if trial=='yes') href="$(link-login-only)?dst=$(link-orig-esc)&username=T-$(mac-esc)" $(endif)>
+									ng-disabled="vm.condiciones === false"  
+									$(if trial == 'yes') 
+										href="$(link-login-only)?dst=$(link-orig-esc)&username=T-$(mac-esc)"
+									$(else)
+										type="submit"
+									$(endif)>
 									<span ng-show="vm.condiciones === false">
 										<md-icon class="text-danger" aria-label="Entrar"
 											md-svg-src="img/baseline-block-24px.svg"></md-icon>
