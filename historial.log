@@ -73,3 +73,13 @@ Versión 2.04 (20/07/2021)
 - Se añade más margen desde el final de la página hasta footer.
 - Se cambia todo el aspecto de la tarjeta principal. Siendo ahora un div transparente y con un fondo de color azul.
 - Se añade el asunto y el cuerpo al enlace del copyright.
+
+Versión 2.1 (03/08/2021)
+================================================
+- Se muestra un toast de ayuda al hacer clic en el logo (no se puede en el botón de entrar)
+- Arreglado que salga el botón de aceptar cuando esté el trial activado
+- Se vuelve a mostrar el "Nombre de Empresa" en el footer.
+- Se mejora la apariencia del botón "Entrar" cuando está desactivado.
+- Se añade un efecto de "Púlsame" sobre el botón que debe pulsar en cada momento, para guiar al usuario.
+- Eliminado la variable vm.trial en Angular, para sólo usar $(trial) en HTML directamente. Así evitamos tener que modificar código JS se activa o no la trial, ya sólo depende de la variable del mikrotik, no del código JS. 
+- Actualizado de AngularJS 1.70 a AngularJS 1.8.2

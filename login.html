@@ -43,7 +43,7 @@
 <body class='login'>
 
 
-		<!-- $(if chap-id) -->
+	<!-- $(if chap-id) -->
 	<form name="sendin" action="$(link-login-only)" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
@@ -61,9 +61,9 @@
 			return false;
 		}
 	</script>
-		<!-- $(endif) -->
+	<!-- $(endif) -->
 
-
+	
 	<md-toolbar class="md-hue-1 flex" id="barra">
 		<div class="md-toolbar-tools">
 			<!-- Botón invisible por ahora -->
@@ -124,10 +124,11 @@
 							</md-card-title-text>
 						</md-card-title>
 
+
 						<!-- Logo -->
 						<div class="row">
 							<div class="col"></div>
-							<div class="col-8 centrado logo">
+							<div class="col-8 centrado logo" ng-click="vm.mensajeCondiciones()">
 								<img src="img/logo.png" class="md-card-image img-fluid" alt="Logo">
 							</div>
 							<div class="col"></div>
@@ -139,33 +140,33 @@
 							<div layout="column" layout-align="center">
 
 								<!-- Botón de condiciones y status -->
-								<md-button class="md-raised text-truncate text-light" style="background-color: #3e4d59;" 
-									ng-click="vm.mostrarCondiciones($event)" aria-label="Condiciones de uso">
+								<md-button class="md-raised md-primary text-truncate btn-form" ng-class="{'pulsame':!vm.condiciones}"
+									ng-click="vm.mostrarCondiciones($event)" role="button"  aria-label="Condiciones de uso">
 									<md-tooltip md-direction="top" md-delay="700">{{vm.m.tipUsoServicio}}</md-tooltip>
 									<md-icon class="text-info" aria-label="ver-condiciones"
 										md-svg-src="img/baseline-info-24px.svg"></md-icon>
 									<span>{{vm.m.formUso}}</span>
 								</md-button>
 								<div ng-show="status!=''" class="text-center">
-									<div
-										ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
+									<div ng-class="{'alert alert-success': vm.condiciones===true, 'alert alert-danger': vm.condiciones===false}">
 										<span><strong>{{status}}</strong></span>
 										<div ng-show="vm.condiciones===true">
-											                       <!-- $(if trial == 'no') -->
-											<span class="small" ng-show="vm.trial===false">{{vm.m.formParrafo}}</span>
-											                       <!-- $(endif) -->
-											                       <!-- $(if trial == 'yes') -->
-											<span class="small"
-												ng-show="vm.trial===true">{{vm.m.formParrafoTrial}}</span>
-											                       <!-- $(endif) -->
+											<span class="small">
+												<!--$(if trial == 'yes')-->
+												{{vm.m.formParrafoTrial}}
+												<!--$(else)-->
+												{{vm.m.formParrafo}}
+												<!--$(endif)-->
+											</span>
+
 										</div>
 									</div>
 								</div>
 
 								<!-- Usuario y contraseña -->
-								                       <!-- $(if trial == 'no') -->
-								<div ng-show="vm.condiciones==true && vm.trial===false">
-
+								<!-- $(if trial == 'no') -->
+								<div ng-show="vm.condiciones==true">
+									
 									<div class="input-group mt-5">
 										<div class="input-group-prepend">
 											<div class="input-group-text">
@@ -184,14 +185,15 @@
 										<input class="form-control" placeholder="{{vm.m.formPass}}" autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
 									</div>
 								</div>
-
-
-								<!-- Botón de entrar -->
-								<md-button ng-show="vm.trial === false" ng-disabled="vm.condiciones === false"
-									type="submit" class="md-raised md-primary text-light" style="background-color: #3e4d59;" >
+								<!-- $(endif) -->
+								<!-- Botón de entrar. Si es trial tiene un atributo href adicional -->
+								<md-button class="md-raised md-primary text-truncate" ng-class="{'btn-form pulsame':vm.condiciones}" 
+									ng-disabled="vm.condiciones === false" type="submit"
+									$(if trial=='yes') href="$(link-login-only)?dst=$(link-orig-esc)&username=T-$(mac-esc)" $(endif)>
 									<span ng-show="vm.condiciones === false">
 										<md-icon class="text-danger" aria-label="Entrar"
-											md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}
+											md-svg-src="img/baseline-block-24px.svg"></md-icon>
+										{{vm.m.formEntrar}}
 									</span>
 									<span ng-show="vm.condiciones === true">
 										<md-icon class="text-success" aria-label="Entrar"
@@ -199,40 +201,26 @@
 										{{vm.m.formEntrar}}
 									</span>
 								</md-button>
-								                       <!-- $(endif) -->
-								                       <!-- $(if trial == 'yes') -->
-								<md-button ng-show="vm.trial === true" class="md-raised md-primary text-light"
-									ng-disabled="vm.condiciones === false" style="background-color: #3e4d59;"
-									href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
-									<span ng-show="vm.condiciones === false">
-										<md-icon class="text-danger" aria-label="Entrar"
-											md-svg-src="img/baseline-block-24px.svg"></md-icon>{{vm.m.formEntrar}}
-									</span>
-									<span ng-show="vm.condiciones === true">
-										<md-icon class="text-success" aria-label="Entrar"
-											md-svg-src="img/baseline-verified_user-24px.svg"></md-icon>
-										{{vm.m.formEntrar}}
-									</span>
-								</md-button>
-								                       <!-- $(endif) -->
 
 							</div>
 
-							<!-- Mensaje de internet de cortesía y posibles mensajes de error del mikrotic-->
-											        <!-- $(if trial == 'yes') -->
-							<div layout="column" layout-align="center">
-								<div id="trial" ng-show="vm.trial===true">
-									<p class="alert alert-info text-center">{{vm.m.cMensaje}}
-									</p>
+							<!-- Posibles mensajes de error del mikrotik -->
+							<!-- Desactivado por ahora. Activar si se quiere ver en tiempo real si está activada trial o no -->
+							<div ng-show="false" layout="column" layout-align="center">
+								<!-- $(if trial == 'yes') -->
+								<div class="alert alert-info">
+									<p>{{vm.m.cMensaje}}</p>
 								</div>
-								<!--
-                            $(endif)
-                            $(if error)
-								-->
+								<!--$(else)-->
+								<div class="alert alert-info">
+									<p>Wifi Trial no Activado. Usa usuario y contraseña</p>
+								</div>
+								<!--$(endif)-->
+								<!-- $(if error) -->
 								<div id="error">
 									<p class="alert alert-danger text-center">$(error)</p>
 								</div>
-								                       <!-- $(endif) -->
+								<!-- $(endif) -->
 							</div>
 
 						</md-card-content>
@@ -254,10 +242,11 @@
 		<hr>		
 	</div>
 
-	<footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie" ng-show="vm.condiciones==false">
+
+	<footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie" ng-show="!vm.condiciones">
 		<div class="container">
 			<!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
-			<span ng-show="false" class="lead text-truncate">{{vm.descripcion}}</span>
+			<span ng-show="true" class="lead text-truncate">{{vm.descripcion}}</span>
 
 			<!-- Trozo copyright-->
 			<span class="text-center">
@@ -279,12 +268,9 @@
 		</div>
 	</footer>
 
+	<!-- Código mikrotik original. No borrar-->
 	<script type="text/javascript">
-		//<!--
 		document.login.username.focus();
-		//-->
-	</script>
-	<script type="text/javascript">
 		document.oncontextmenu = function () {
 			return false;
 		}

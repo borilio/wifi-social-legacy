@@ -79,8 +79,8 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
                 $scope.status = "";
 
 
-                //El toast lo mostramos en cargarIdioma(), ya que si no al ser asincrono, es posible que
-	            //cuando termine cargarIdioma() todavía vm.m.langChange valga todavía lo anterior y no salía bien el mensaje
+                //El toast lo mostramos en cargarIdioma(), ya que si no al ser asíncrono, es posible que
+	            //cuando termine cargarIdioma() todavía vm.m.langChange valga lo anterior y no salía bien el mensaje
 
 	        }, function () { //Canceló la ventana sin aceptar o declinar
 	            //No hacemos nada, lo dejamos todo tal y como está...
@@ -162,6 +162,14 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
         $http.get(url).then(exito, error);
     };
 
+	//Muestra un mensaje con el texto de que debe aceptar las condiciones antes de continuar
+	//Se lanza al pulsar la imagen del logo
+	vm.mensajeCondiciones = function () {
+		vm.muestraToast(vm.m.condNoAcepto);
+	};
+	
+	
+
     //NOTE: Una vez definido, aquí empieza la ejecución del programa
     //FIXME: Arreglar ésto, creando un objeto JS tipo var app ={ atributos:... , métodos: ... }
     /******************************************************************************************/
@@ -169,21 +177,15 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     /******************************************************************************************/
 
     //Configuración básica
-    vm.empresa = "Empresa Demo";
+    vm.empresa = "Nombre Empresa";
     vm.copyright = "GoBo Technologies";
     vm.descripcion = vm.empresa;
-    vm.numeroVersion = "2.04";
-    vm.nombreVersion = "B";
+    vm.numeroVersion = "2.1";
+    vm.nombreVersion = "a";
     vm.enlaceCopyright = "mailto:gobotecno@gmail.com?subject=WifiSocial&body=From " + vm.empresa + " (" + vm.numeroVersion + vm.nombreVersion + ")" ; //Enlace al que llevará el copyright
-    /**
-    vm.trial sólo sirve para poder probar como saldrían las cosas teniendo activada la trial o no. Ya que ésta variable se debe cambiar
-    a mano. Hay que usar unos if(trial=yes) en el html que el mikrotik si los interpreta, pero que fuera de él hay que ponerle comentarios
-    para no enguarrarlo.
-    */
-    vm.trial = false;           //Para mostrar u ocultar las opciones de wifi de cortesía sin login.
-
+   
     //Seleccionamos español por defecto
-    vm.idioma = "es";
+    vm.idioma = "es"; //Valores posibles son "es", "en" y "fr" 
     vm.m = {};
     vm.cargarIdioma(vm.idioma);  //Y rellenamos el objeto m con los textos para el idioma seleccionado
 

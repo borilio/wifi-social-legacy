@@ -1,80 +1,122 @@
 /******************************************/
 /* Personalizaciones */
 #barra {
-    background: rgb(21,21,21);
-	background: linear-gradient(284deg, rgba(21,21,21,1) 0%, rgba(37,37,37,1) 49%, rgba(57,57,57,1) 73%, rgba(91,86,86,1) 100%);
+  background: rgb(21, 21, 21);
+  background: linear-gradient(
+    284deg,
+    rgba(21, 21, 21, 1) 0%,
+    rgba(37, 37, 37, 1) 49%,
+    rgba(57, 57, 57, 1) 73%,
+    rgba(91, 86, 86, 1) 100%
+  );
 }
 
-html, body {
-	background: #a2a09b;
-	background: linear-gradient(135deg, hsla(236.6, 0%, 53.52%, 1) 0, hsla(236.6, 0%, 53.52%, 0) 70%), linear-gradient(25deg, hsla(220.75, 34.93%, 26.52%, 1) 10%, hsla(220.75, 34.93%, 26.52%, 0) 80%), linear-gradient(315deg, hsla(46.42, 36.62%, 83.92%, 1) 15%, hsla(46.42, 36.62%, 83.92%, 0) 80%), linear-gradient(245deg, hsla(191.32, 50.68%, 56.45%, 1) 100%, hsla(191.32, 50.68%, 56.45%, 0) 70%);
-	background-attachment: fixed;
+html,
+body {
+  background: #a2a09b;
+  background: linear-gradient(
+      135deg,
+      hsla(236.6, 0%, 53.52%, 1) 0,
+      hsla(236.6, 0%, 53.52%, 0) 70%
+    ),
+    linear-gradient(
+      25deg,
+      hsla(220.75, 34.93%, 26.52%, 1) 10%,
+      hsla(220.75, 34.93%, 26.52%, 0) 80%
+    ),
+    linear-gradient(
+      315deg,
+      hsla(46.42, 36.62%, 83.92%, 1) 15%,
+      hsla(46.42, 36.62%, 83.92%, 0) 80%
+    ),
+    linear-gradient(
+      245deg,
+      hsla(191.32, 50.68%, 56.45%, 1) 100%,
+      hsla(191.32, 50.68%, 56.45%, 0) 70%
+    );
+  background-attachment: fixed;
 }
 
 .btn-refresh {
-    background-color: rgba(193, 193, 193, 0.96);
-    color: rgba(44, 65, 164, 0.96);
-    transition: 0.3s;
+  background-color: rgba(193, 193, 193, 0.96);
+  color: rgba(44, 65, 164, 0.96);
+  transition: 0.3s;
 }
 
 .tarjeta {
-    margin-top: 30px;
-    margin-bottom: 100px;
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
 
 .sombra {
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 .centrado {
-    text-align: center;
+  text-align: center;
 }
 
 .logo {
-	margin: 10px;
+  margin: 10px;
 }
 
 .pie {
-    z-index: 0;
+  z-index: 0;
 }
 
 .hueco {
-	margin-top: 15rem;
+  margin-top: 15rem;
 }
 
-.btn-form {
-	background-color: #3e4d59;
+.md-button.btn-form {
+  background-color: #383e44 !important;
+  color: #fff;
 }
 
 /*Botón de selección de idioma*/
 .btn-idioma {
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+/* Efecto pulso en azul */
+.pulsame {
+  border: 2px rgb(0, 204, 255) solid;
+  animation: pulse 1s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 204, 255, 0.6);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 50px rgba(255, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
 /*Imagen para cada botón de idioma
 1.buscarlo en https://restcountries.eu/rest/v2/name/nombredelpais
 2.ponerlo en la carpeta /img/lang/xx.svg
 */
 .btn-idioma-es {
-    background-image: url(../img/lang/es.svg);
+  background-image: url(../img/lang/es.svg);
 }
 .btn-idioma-en {
-    background-image: url(../img/lang/en.svg);
+  background-image: url(../img/lang/en.svg);
 }
 .btn-idioma-fr {
-    background-image: url(../img/lang/fr.svg);
+  background-image: url(../img/lang/fr.svg);
 }
-
-
-
-
 
 /* Fin Personalizaciones */
 /******************************************/
 .login {
-	font-family: arial;
-	padding: 0px 0 0 0;
+  font-family: arial;
+  padding: 0px 0 0 0;
 }
 
 /*
@@ -87,68 +129,65 @@ html, body {
 
 .login a,
 .login a:visited {
-	text-decoration: underline;
-	color: inherit;
+  text-decoration: underline;
+  color: inherit;
 }
 
 ul.notice {
-	margin: 30px auto;
-	width: 300px;
-	text-align: center;
-	list-style-position: inside;
-	font-size: 15px;
-	padding: 20px 30px;
-	border-radius: 3px;
+  margin: 30px auto;
+  width: 300px;
+  text-align: center;
+  list-style-position: inside;
+  font-size: 15px;
+  padding: 20px 30px;
+  border-radius: 3px;
 }
 
 ul.notice.errors {
-	background-color: #fff4f4;
-	border: 1px solid #f50909;
-	color: #f50909;
+  background-color: #fff4f4;
+  border: 1px solid #f50909;
+  color: #f50909;
 }
 
 ul.notice.success {
-	background-color: #d7eacd;
-	border: 1px solid #6fae4f;
-	color: #6fae4f;
+  background-color: #d7eacd;
+  border: 1px solid #6fae4f;
+  color: #6fae4f;
 }
 
 ul.notice li {
-	padding: 5px 0;
+  padding: 5px 0;
 }
 
 .vertical-form {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .vertical-form legend {
-	width: 100%;
-	font-size: 24px;
-	font-weight: 500;
-	text-align: center;
-	margin: 0 0 30px 0;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 30px 0;
 }
 
-
-
 .vertical-form .footer {
-	text-align: center;
+  text-align: center;
 }
 
 .vertical-form .footer p:first-child {
-	color: #222;
+  color: #222;
 }
 
 .vertical-form .footer a:first-child {
-	border-bottom: solid 1px #ccc;
-	-webkit-appearance: none;
-	text-decoration: none;
+  border-bottom: solid 1px #ccc;
+  -webkit-appearance: none;
+  text-decoration: none;
 }
 
 .vertical-form .footer p:nth-child(2) a {
-	border-bottom: solid 1px #000;
+  border-bottom: solid 1px #000;
 }
-
 
 /*
 @media (max-width:768px) {
