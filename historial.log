@@ -81,5 +81,6 @@ Versión 2.1 (03/08/2021)
 - Se vuelve a mostrar el "Nombre de Empresa" en el footer.
 - Se mejora la apariencia del botón "Entrar" cuando está desactivado.
 - Se añade un efecto de "Púlsame" sobre el botón que debe pulsar en cada momento, para guiar al usuario.
+- Se añade el efecto "Púlsame" a los botones de aceptar las condiciones, para los 3 idiomas.
 - Eliminado la variable vm.trial en Angular, para sólo usar $(trial) en HTML directamente. Así evitamos tener que modificar código JS se activa o no la trial, ya sólo depende de la variable del mikrotik, no del código JS. 
 - Actualizado de AngularJS 1.70 a AngularJS 1.8.2
