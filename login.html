@@ -138,9 +138,10 @@
 						<md-card-content>
 
 							<div layout="column" layout-align="center">
-
+								
 								<!-- Botón de condiciones y status -->
-								<md-button class="md-raised md-primary text-truncate btn-form" ng-class="{'pulsame':!vm.condiciones}"
+								<md-button class="md-raised md-primary text-truncate btn-form" 
+									ng-class="{'pulsame':!vm.condiciones}"
 									ng-click="vm.mostrarCondiciones($event)" role="button"  aria-label="Condiciones de uso">
 									<md-tooltip md-direction="top" md-delay="700">{{vm.m.tipUsoServicio}}</md-tooltip>
 									<md-icon class="text-info" aria-label="ver-condiciones"

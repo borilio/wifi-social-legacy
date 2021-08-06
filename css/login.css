@@ -83,10 +83,10 @@ body {
 /* Efecto pulso en azul */
 .pulsame {
   border: 2px rgb(0, 204, 255) solid;
-  animation: pulse 1s infinite;
+  animation: pulso 1s infinite;
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes pulso {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(0, 204, 255, 0.6);
   }
