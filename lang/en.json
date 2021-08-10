@@ -1,0 +1,53 @@
+{
+    "_init": "Configuración inicial",
+    "code": "en",
+    "desc": "English",
+    "title": "WIFI Free Zone",
+    "menuBar": "WIFI for customers",
+
+    "_toolTip": "Texto en los toolTipText",
+    "tipAyuda": "Show help",
+    "tipIdioma": "Change language",
+    "tipReset": "Load defaults settings",
+    "tipUsoServicio": "To continue, you must read and accept the terms of use",
+
+
+    "_formulario": "Parte del formulario",
+    "formParrafo": "Now you can use the username and password provided by the establishment",
+    "formParrafoTrial": "Now you can use our courtesy internet by pressing ENTER",
+    "formUser": "User",
+    "formPass": "Password",
+    "formUso": "Use of service",
+    "formEntrar" : "Enter",
+
+    "_condiciones": "Trozo de texto sobre la aceptación o no de las condiciones de uso",
+    "condAcepto" : "You have accepted the terms of use",
+    "condNoAcepto" : "You must accept the terms of use to be able to navigate",
+    "condElse": "You have closed the window. You will not be able to navigate while you do not accept the conditions",
+
+
+    "_idioma": "Parte de todo lo relacionado con el cambio de idioma",
+    "langChange": "Language established to English",
+    "langSelecciona" : "Select language",
+
+    "_comun": "Parte para textos comunes",
+    "comSi": "Yes",
+    "comNo": "No",
+    "comCancelar": "Cancel",
+    "comOk": "Ok",
+    "comCerrar": "Close",
+
+    "_ayuda" : "Parte para la página de ayuda",
+    "hAyuda" : "Help",
+    "hHeader": "Follow the steps ...",
+    "hPaso"  : "Step",
+    "hPar1"  : "In order to use our WIFI service, you must first read the conditions of use, for this you will have to press the 'USE OF SERVICE' button as shown in the image.",
+    "hPar2"  : "A window will open with the terms of use of the service, which you can accept if you agree, or reject otherwise, you will find the buttons at the end of the terms and conditions, as shown in the image. Remember that if you do not accept the conditions you will not be able to use the service.",
+    "hPar3"  : "Once accepted the conditions of use, you can already enter the username and password provided by the establishment, and then you can click on 'ENTER'.",
+
+    "_cortesia" : "Parte para internet de cortesía",
+    "cMensaje" : "To get free internet, click on the next button",
+
+
+    "elUltimoQueCierre": "Este es el último atributo, añadir todos los atributos por encima de éste."
+}

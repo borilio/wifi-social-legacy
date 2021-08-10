@@ -15,23 +15,25 @@
 	<script src="libreria/otras/jquery.min.js"></script>
 	<link rel="stylesheet" href="libreria/css/bootstrap.min.css" />
 	<script src="libreria/css/bootstrap.min.js"></script>
-
+	<!--Animate.style (http://animate.style)-->
+	<link rel="stylesheet" href="libreria/css/animate.min.css"/>
+	
 	<!--Angular-->
 	<script src="libreria/angular/angular.min.js"></script>
 	<script src="libreria/angular/angular-route.min.js"></script>
 	<script src="libreria/angular/angular-animate.min.js"></script>
 	<script src="libreria/angular/angular-aria.min.js"></script>
 	<script src="libreria/angular/angular-messages.min.js"></script>
-
+	
 	<!--Angular Material-->
 	<script src="libreria/angular/angular-material.min.js"></script>
 	<link rel="stylesheet" href="libreria/css/angular-material.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" />
 	<!--Lista completa de iconos en https://www.google.com/design/icons/-->
-
-	<!-- FontAwesome -->
-	<link rel="stylesheet" href="libreria/css/font-awesome.min.css" />
+	
+	<!-- FontAwesome (deshabilitada en v2.1b ya que no se usa)-->
+	<!-- <link rel="stylesheet" href="libreria/css/font-awesome.min.css" /> -->
 
 	<!--Archivos propios-->
 	<script src="js/codigo.js" type="text/javascript"></script>
@@ -128,7 +130,7 @@
 						<!-- Logo -->
 						<div class="row">
 							<div class="col"></div>
-							<div class="col-8 centrado logo" ng-click="vm.mensajeCondiciones()">
+							<div class="col-8 centrado logo animate__animated animate__rubberBand" ng-click="vm.mensajeCondiciones()">
 								<img src="img/logo.png" class="md-card-image img-fluid" alt="Logo">
 							</div>
 							<div class="col"></div>
@@ -167,31 +169,37 @@
 								<!-- Usuario y contraseña -->
 								<!-- $(if trial == 'no') -->
 								<div ng-show="vm.condiciones==true">
-									
-									<div class="input-group mt-5">
+								
+									<div class="input-group mt-5" ng-class="{'pulsame' : !vm.user}">
 										<div class="input-group-prepend">
 											<div class="input-group-text">
 												<md-icon aria-label="User" md-svg-src="img/ic_account_circle_black_24px.svg"></md-icon>
 											</div>
 										</div>
-										<input class="form-control" placeholder="{{vm.m.formUser}}" id="user" name="username" type="text" value="" ng-model="vm.user" size="30" />
+										<input class="form-control" placeholder="{{vm.m.formUser}}" id="user" name="username" type="text" value=""
+											ng-model="vm.user" size="30" />
 									</div>
-
-									<div class="input-group my-2">
+							
+									<div class="input-group my-2" ng-class="{'pulsame' : !vm.pass}">
 										<div class="input-group-prepend">
 											<div class="input-group-text">
 												<md-icon aria-label="Pass" md-svg-src="img/ic_lock_outline_black_24px.svg"></md-icon>
 											</div>
 										</div>
-										<input class="form-control" placeholder="{{vm.m.formPass}}" autocomplete="off" name="password" type="password" ng-model="vm.pass" label="false" size="20" />
+										<input class="form-control" placeholder="{{vm.m.formPass}}" autocomplete="off" name="password"
+											type="password" ng-model="vm.pass" label="false" size="20" />
 									</div>
 								</div>
 								<!-- $(endif) -->
-								<!-- Botón de entrar. Si es trial tiene un atributo href adicional. Sólo es submit cuando NO es trial -->
-								<md-button class="md-raised md-primary text-truncate" ng-class="{'btn-form pulsame':vm.condiciones}" 
+								<!-- 
+									Botón de entrar. 
+									Si es trial tiene un atributo href adicional. 
+									Si no, tiene un type=submit 
+								-->
+								<md-button class="md-raised md-primary text-truncate btn-form" ng-class="{'pulsame':vm.condiciones && vm.user && vm.pass}" 
 									ng-disabled="vm.condiciones === false"  
 									$(if trial == 'yes') 
-										href="$(link-login-only)?dst=$(link-orig-esc)&username=T-$(mac-esc)"
+										href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
 									$(else)
 										type="submit"
 									$(endif)>
@@ -248,7 +256,7 @@
 	</div>
 
 
-	<footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie" ng-show="!vm.condiciones">
+	<footer class="navbar fixed-bottom navbar-dark bg-dark text-light pie" ng-show="!vm.condiciones" ng-class="{'animate__animated animate__backOutDown':vm.condiciones}">
 		<div class="container">
 			<!-- Trozo descripción (se oculta la descripción, si el footer se pone más chico)-->
 			<span ng-show="true" class="lead text-truncate">{{vm.descripcion}}</span>

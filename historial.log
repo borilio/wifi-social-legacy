@@ -84,3 +84,10 @@ Versión 2.1 (03/08/2021)
 - Se añade el efecto "Púlsame" a los botones de aceptar las condiciones, para los 3 idiomas.
 - Eliminado la variable vm.trial en Angular, para sólo usar $(trial) en HTML directamente. Así evitamos tener que modificar código JS se activa o no la trial, ya sólo depende de la variable del mikrotik, no del código JS. 
 - Actualizado de AngularJS 1.70 a AngularJS 1.8.2
+----- Hotfix 2.1.1 b (10/08/2021) -----
+- HotFix: Se arregla el envío de formulario al "Entrar". (No envíaba nada). Añadida &amp; en la url.
+- Renombrada carpeta 'traducciones' a 'lang'.
+- Deshabilitado en login.html la librería de font-awesome, ya que no se usa en ningún momento.
+- Se añade la librería animate.style.css v.4.1.1 para lo que encarte.
+- Se añade una animación al footer tras aceptar las condiciones (lo ocultamos, pero ahora animado).
+- Se añade una animación al logo al iniciar.

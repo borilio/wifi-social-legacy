@@ -158,7 +158,7 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
 		};
 
 		//Hacemos la consulta ajax y si va bien, se ejecutará la función éxito, si no error
-        var url = "traducciones/" + vm.idioma + ".json";
+        var url = "lang/" + vm.idioma + ".json";
         $http.get(url).then(exito, error);
     };
 
@@ -180,8 +180,8 @@ function mainController($scope, $mdDialog, $mdToast, $http) {
     vm.empresa = "Nombre Empresa";
     vm.copyright = "GoBo Technologies";
     vm.descripcion = vm.empresa;
-    vm.numeroVersion = "2.1";
-    vm.nombreVersion = "a";
+    vm.numeroVersion = "2.1.1";
+    vm.nombreVersion = "b";
     vm.enlaceCopyright = "mailto:gobotecno@gmail.com?subject=WifiSocial&body=From " + vm.empresa + " (" + vm.numeroVersion + vm.nombreVersion + ")" ; //Enlace al que llevará el copyright
    
     //Seleccionamos español por defecto
