@@ -88,6 +88,7 @@ Versión 2.1 (03/08/2021)
 - HotFix: Se arregla el envío de formulario al "Entrar". (No envíaba nada). Añadida &amp; en la url.
 - Renombrada carpeta 'traducciones' a 'lang'.
 - Deshabilitado en login.html la librería de font-awesome, ya que no se usa en ningún momento.
+- Se añade efecto púlsame a "Usuario" y "Contraseña" antes de añadirlo al botón de "Entrar".
 - Se añade la librería animate.style.css v.4.1.1 para lo que encarte.
 - Se añade una animación al footer tras aceptar las condiciones (lo ocultamos, pero ahora animado).
 - Se añade una animación al logo al iniciar.
